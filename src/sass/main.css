@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +7,6 @@
 }
 
 body {
-  background: #c7c7c7;
   overflow-x: hidden;
   overflow-y: hidden;
   display: -webkit-box;
@@ -17,107 +17,26 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
+  background-color: #FFEC8A;
 }
 
 nav {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  justify-items: center;
-  -webkit-transform: translateY(-500px);
-          transform: translateY(-500px);
-  -webkit-transition: -webkit-transform 0.5s ease-in;
-  transition: -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in;
-  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
-}
-
-nav .nav-items {
-  background-color: #96C9FE;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 40vh;
+  height: 10vh;
+  border: 2px solid red;
 }
 
 nav .nav-items a {
-  font-family: Helvetica, sans-serif;
+  font-family: "Titillium Web", sans-serif;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #333;
-  font-size: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 8vh;
-          flex: 0 8vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-decoration: none;
-  padding: 10px;
-}
-
-.open {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-  transition: -webkit-transform 0.5s ease-out;
-  transition: transform 0.5s ease-out;
-  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
-}
-
-#header {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 15vh;
-          flex: 0 15vh;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem 2rem;
-  font-size: 2rem;
-  background-color: #96C9FE;
-  z-index: 1;
 }
 
 #logo {
-  position: relative;
   border: 4px solid #333;
   border-radius: 50%;
   padding: 1.5rem;
   line-height: 1rem;
   background-color: #c7c7c7;
-  -webkit-transition: background 300ms ease;
-  transition: background 300ms ease;
-}
-
-#logo:hover {
-  background-color: rgba(51, 51, 51, 0.37);
-  -webkit-transition: background 500ms ease;
-  transition: background 500ms ease;
 }
 
 #toggle img {
@@ -126,7 +45,7 @@ nav .nav-items a {
 }
 
 footer {
-  height: 15vh;
+  height: calc(150px + 0.5vw);
   margin-top: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -137,6 +56,7 @@ footer {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  border: 2px solid red;
 }
 
 footer .footer-icons {
@@ -147,10 +67,9 @@ footer .footer-icons {
       -ms-flex-pack: center;
           justify-content: center;
   width: 20vw;
-  height: 15vh;
 }
 
-footer #info-icon :active {
+footer .footer-icons :active {
   opacity: 0.4;
 }
 
@@ -159,7 +78,6 @@ footer #info-icon img {
 }
 
 footer .info-bar {
-  border: 1px solid blue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,7 +85,7 @@ footer .info-bar {
       -ms-flex-pack: center;
           justify-content: center;
   width: 60vw;
-  height: 15vh;
+  border: 2px solid red;
   -webkit-transform: translateX(-400px);
           transform: translateX(-400px);
   -webkit-transition: -webkit-transform 0.5s ease-out;
@@ -191,11 +109,9 @@ footer .info-open {
 
 @media (min-width: 500px) {
   nav {
-    width: 40%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin-left: auto;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     background-color: rgba(51, 51, 51, 0);
@@ -220,9 +136,13 @@ footer .info-open {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 1rem 2rem;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-  nav .nav-items a:hover {
+  nav .nav-items a {
+    font-size: 1.5rem;
+  }
+  nav .nav-items a :hover {
     color: rgba(241, 168, 235, 0.37);
     text-shadow: 0.5px 0.5px 0.5px white;
   }
@@ -237,6 +157,18 @@ footer .info-open {
     background-color: rgba(51, 51, 51, 0.37);
     -webkit-transition: background 500ms ease;
     transition: background 500ms ease;
+  }
+  .info-bar {
+    width: 45vw;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  }
+  #info-icon {
+    visibility: hidden;
   }
 }
 /*# sourceMappingURL=main.css.map */

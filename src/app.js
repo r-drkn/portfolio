@@ -1,6 +1,6 @@
 const navSlide = () => {
     const toggle = document.querySelector('#toggle');
-    const nav = document.querySelector('.nav');
+    const nav = document.querySelector('.nav-items');
 
     toggle.addEventListener('click',()=>{
         nav.classList.toggle('open');
