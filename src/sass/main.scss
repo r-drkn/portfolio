@@ -8,15 +8,22 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
 body {
-  overflow-x: hidden; // hide scroll bar
+  overflow-x: hidden;
   overflow-y: hidden;
   height: 100vh;
   background-color: $secondary-color;
 }
 
 .grid-container {
+  overflow-x: hidden;
+  overflow-y: hidden;
   height: 100%;
   display: grid;
   grid-template: 1fr 5fr 2fr 2.5fr 1fr / 1fr 3fr 1fr;
