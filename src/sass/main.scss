@@ -10,65 +10,121 @@
 body {
   overflow-x: hidden; // hide scroll bar
   overflow-y: hidden;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
   background-color: $secondary-color;
 }
 
-// .grid-container {
-//     border: 2px solid red;
-//     position: absolute;
-//     background-color: $secondary-color;
-//     height: 100vh;
-//     width: 100%;
-//     z-index: -2;
-//     :nth-child(odd){
-//         border: 2px solid red;
-//     }
-//     :nth-child(even){
-//         border: 2px solid red;
-//     }
-// }
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template: 1fr 5fr 2fr 2.5fr 1fr / 1fr 3fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "upper-section upper-section upper-section"
+    "lower-section lower-section lower-section"
+    "lower-section lower-section lower-section"
+    "footer footer footer";
+}
 
-nav {
-  // background-color: $primary-color;
-  height: 10vh;
-  border: $bug-border;
+.page-title{
+  font-family: $header-text;
+  grid-area: header;
+  font-size: 2rem;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-icon {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.nav {
+  display: block;
+  justify-items: center;
+  align-items: center;
+  grid-row: 3 / span 2;
+  grid-column: 1 / -1;
+  position: relative;
+  border: 2px solid blue;
+  // border-top: 3px solid #333;
   .nav-items {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    transform: translateY(300px);
+    transition: transform 0.5s ease-out;
+    &.open {
+      transform: translateY(0);
+      transition: transform 0.5s ease-in;
+    }
     a {
-      font-family: "Titillium Web", sans-serif;
+      font-family: $header-text;
       letter-spacing: 5px;
       text-transform: uppercase;
+      text-decoration: none;
     }
   }
 }
 
-.open {
+.upper-section {
+  height: 100%;
+  grid-area: upper-section;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-#logo {
-  border: 4px solid #333;
-  border-radius: 50%;
-  padding: 1.5rem;
-  line-height: 1rem;
-  background-color: $white-color;
-}
-
-#toggle {
-  img {
-    height: 2.5rem;
-    display: block;
+.lower-section {
+  height: 100%;
+  grid-area: lower-section;
+  display: flex;
+  width: 100%;
+  z-index: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  .lower-text {
+    text-align: center;
+    padding: 2rem;
+    z-index: 0;
   }
 }
 
+.lower-text {
+  text-align: center;
+  padding: 2rem;
+  z-index: 0;
+  position: relative;
+}
+
+
 footer {
-  height: calc(150px + 0.5vw);
-  margin-top: auto;
+  //   :nth-child(odd){
+  //     border: 2px solid red;
+  // }
+  // :nth-child(even){
+  //     border: 2px solid red;
+  // }
+  height: 100%;
+  grid-area: footer;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border: $bug-border;
+  z-index: 2;
+  padding-bottom: 50px;
+  background-color: $secondary-color;
   .footer-icons {
     display: flex;
     justify-content: center;
@@ -77,7 +133,13 @@ footer {
       opacity: 0.4;
     }
   }
+  #toggle {
+    img {
+      height: 2.5rem;
+    }
+  }
   #info-icon {
+    z-index: 0;
     img {
       width: 2.5rem;
     }
@@ -86,16 +148,16 @@ footer {
     display: flex;
     justify-content: center;
     width: 60vw;
-    border: $bug-border;
-    transform: translateX(-400px);
-    transition: transform 0.5s ease-out;
+    transform: translateY(200px);
+    transition: transform 0.2s ease-out;
+    z-index: 2;
     #info:nth-of-type(odd) {
       width: 15vw;
     }
   }
   .info-open {
-    transform: translateX(0);
-    transition: transform 0.5s ease-in;
+    transform: translateY(0);
+    transition: transform 0.2s ease-in;
   }
 }
 
@@ -104,15 +166,12 @@ footer {
 @media (min-width: 500px) {
   nav {
     justify-content: space-between;
-    transform: translate3d(0, 0, 0);
-    background-color: rgba(51, 51, 51, 0);
+    background-color: $primary-color;
     .nav-items {
       background-color: rgba(51, 51, 51, 0);
       flex-direction: row;
       justify-content: space-between;
       transition: transform 0.5s ease-in;
-      flex: 0 15vh;
-      height: 15vh;
       display: flex;
       flex-wrap: wrap;
       a {
@@ -150,8 +209,6 @@ footer {
 // Screen Sizes 700px and Up
 
 @media (min-width: 700px) {
-  nav {
-  }
 }
 
 // btn {
