@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -10,7 +11,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   height: 100vh;
-  background-color: #FFEC8A;
+  background-color: #FFC7C4;
 }
 
 .grid-container {
@@ -30,7 +31,7 @@ body {
   -ms-grid-column-span: 3;
   grid-area: header;
   font-size: 2rem;
-  color: #333;
+  color: #607D8B;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +52,7 @@ body {
   grid-row: 2 / span 1;
 }
 
-.nav {
+nav {
   display: block;
   justify-items: center;
   -webkit-box-align: center;
@@ -62,11 +63,10 @@ body {
   grid-row: 3 / span 2;
   grid-column: 1 / -1;
   position: relative;
-  border: 2px solid blue;
 }
 
-.nav .nav-items {
-  background-color: #96C9FE;
+nav .nav-items {
+  background: #F8FF91;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,28 +85,30 @@ body {
   height: 100%;
   z-index: 1;
   position: absolute;
-  -webkit-transform: translateY(300px);
-          transform: translateY(300px);
+  -webkit-transform: translate3d(500px, 200px, 0);
+          transform: translate3d(500px, 200px, 0);
   -webkit-transition: -webkit-transform 0.5s ease-out;
   transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  border-top-left-radius: 2rem;
 }
 
-.nav .nav-items.open {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+nav .nav-items.open {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.5s ease-in;
   transition: -webkit-transform 0.5s ease-in;
   transition: transform 0.5s ease-in;
   transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
-.nav .nav-items a {
-  font-family: "Titillium Web", sans-serif;
+nav .nav-items a {
+  font-family: "Amaranth", sans-serif;
   letter-spacing: 5px;
   text-transform: uppercase;
   text-decoration: none;
+  color: #607D8B;
 }
 
 .upper-section {
@@ -180,7 +182,7 @@ footer {
           justify-content: flex-end;
   z-index: 2;
   padding-bottom: 50px;
-  background-color: #FFEC8A;
+  background-color: #FFC7C4;
 }
 
 footer .footer-icons {
@@ -244,7 +246,7 @@ footer .info-open {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background-color: #96C9FE;
+    background-color: #F8FF91;
   }
   nav .nav-items {
     background-color: rgba(51, 51, 51, 0);
