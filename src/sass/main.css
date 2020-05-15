@@ -7,6 +7,12 @@
           box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 body {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -15,6 +21,9 @@ body {
 }
 
 .grid-container {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
   height: 100%;
   display: -ms-grid;
   display: grid;
