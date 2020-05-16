@@ -27,9 +27,9 @@ body {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 5fr 2fr 2.5fr 1fr;
+  -ms-grid-rows: 1fr 4fr 2fr 2fr 1fr;
   -ms-grid-columns: 1fr 3fr 1fr;
-      grid-template: 1fr 5fr 2fr 2.5fr 1fr / 1fr 3fr 1fr;
+      grid-template: 1fr 4fr 2fr 2fr 1fr / 1fr 3fr 1fr;
       grid-template-areas: "header header header" "upper-section upper-section upper-section" "lower-section lower-section lower-section" "lower-section lower-section lower-section" "footer footer footer";
 }
 
@@ -39,7 +39,7 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: header;
-  font-size: 2rem;
+  font-size: 1rem;
   color: #607D8B;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,6 +175,9 @@ nav .nav-items a {
 }
 
 footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0px;
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -185,12 +188,13 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 2;
-  padding-bottom: 50px;
   background-color: #FFC7C4;
+  height: 100%;
+  padding-bottom: calc(.5rem + env(safe-area-inset-bottom));
 }
 
 footer .footer-icons {
@@ -201,6 +205,10 @@ footer .footer-icons {
       -ms-flex-pack: center;
           justify-content: center;
   width: 20vw;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .footer-icons :active {
