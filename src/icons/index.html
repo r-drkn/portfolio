@@ -1,0 +1,33 @@
+<!-- tute source: https://www.youtube.com/watch?v=SGKXZUGe2sw -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <img src="batu-falsereeds.jpg" alt="batu falsereeds" id="batu" onclick="change();">
+
+    <script type="text/javascript">
+        
+        var image_tracker = 'b';
+        function change() {
+            var image = document.getElementById('batu');
+            if(image_tracker=='b'){
+                image.src = 'ploy-ramos.jpg';
+                image_tracker = 'p';
+            }else{
+                image.src = 'batu-falsereeds.jpg';
+                image_tracker = 'b';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
