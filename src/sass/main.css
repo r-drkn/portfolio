@@ -61,7 +61,7 @@ body {
   grid-row: 2 / span 1;
 }
 
-nav {
+.nav {
   display: block;
   justify-items: center;
   -webkit-box-align: center;
@@ -74,11 +74,7 @@ nav {
   position: relative;
 }
 
-nav .nav {
-  z-index: -1;
-}
-
-nav .nav-items {
+.nav .nav-items {
   background: #F8FF91;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,10 +100,9 @@ nav .nav-items {
   transition: transform 0.5s ease-out;
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
   border-top-left-radius: 2rem;
-  z-index: 1;
 }
 
-nav .nav-items.open {
+.nav .nav-items.open {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.5s ease-in;
@@ -116,7 +111,7 @@ nav .nav-items.open {
   transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
-nav .nav-items a {
+.nav .nav-items a {
   font-family: "Amaranth", sans-serif;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -162,7 +157,6 @@ nav .nav-items a {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem;
-  position: relative;
   overflow-y: scroll;
 }
 
