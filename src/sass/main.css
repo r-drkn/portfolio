@@ -159,6 +159,7 @@ nav .nav-items a {
           align-items: center;
   padding: 1rem;
   position: relative;
+  overflow-y: scroll;
 }
 
 .lower-section .lower-text {
