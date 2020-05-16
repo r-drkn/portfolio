@@ -1,7 +1,6 @@
 @import "variables";
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
 
 * {
   padding: 0;
@@ -58,6 +57,9 @@ nav {
   grid-row: 3 / span 2;
   grid-column: 1 / -1;
   position: relative;
+  .nav {
+    z-index: -1;
+  }
   .nav-items {
     background: $primary-color;
     display: flex;
@@ -67,11 +69,11 @@ nav {
     list-style: none;
     width: 100%;
     height: 100%;
-    z-index: 1;
     position: absolute;
     transform: translate3d(500px, 200px, 0);
     transition: transform 0.5s ease-out;
     border-top-left-radius: 2rem;
+    z-index: 1;
     &.open {
       transform: translate3d(0, 0, 0);
       transition: transform 0.5s ease-in;
@@ -136,7 +138,7 @@ footer {
   z-index: 2;
   background-color: $secondary-color;
   height: 100%;
-  padding-bottom: calc(.5rem + env(safe-area-inset-bottom));
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
   .footer-icons {
     display: flex;
     justify-content: center;
