@@ -1,5 +1,5 @@
 const navSlide = () => {
-    const toggle = document.querySelector('#toggle');
+    const toggle = document.querySelector('#menu');
     const nav = document.querySelector('.nav-items');
 
     toggle.addEventListener('click',()=>{
@@ -10,7 +10,7 @@ const navSlide = () => {
 navSlide()
 
 const footerSlide = () => {
-    const icon = document.querySelector('#info-icon');
+    const icon = document.querySelector('#info');
     const bar = document.querySelector('.info-bar');
 
     icon.addEventListener('click',()=>{
@@ -19,51 +19,6 @@ const footerSlide = () => {
 }
 
 footerSlide()
-
-// var counter = 1;
-// var leftChevron = document.querySelector('#left-chevron');
-// var skillsImage = document.querySelector('#css-icon');
-// leftChevron.addEventListener("click", cycleImageLeft);
-
-// function cycleImageLeft(){
-//     if (counter == 0){
-//       skillsImage.src ="../icons/javascript-icon.svg";
-//       counter++;
-//     }
-//     else if (counter == 1){
-//         skillsImage.src = "../icons/ruby-icon.svg";
-//       counter++;
-//     }
-//     else {
-//     skillsImage.src = "../icons/css-icon.svg";
-//       counter = 0;
-//     }
-//   }
-
-//   cycleImageLeft()
-
-// var rightChevron = document.querySelector('#right-chevron');
-// var skillsImage = document.querySelector('#css-icon');
-// rightChevron.addEventListener("click", cycleImageRight);
-
-// function cycleImageRight(){
-//     if (counter == 1){
-//         skillsImage.src ="../icons/css-icon.svg";
-
-//       counter--;
-//     }
-//     else if (counter == 0){
-//         skillsImage.src = "../icons/ruby-icon.svg";
-
-//       counter--;
-//     }
-//     else {
-//     skillsImage.src = "../icons/javascript-icon.svg";
-//       counter = 0;
-//     }
-//   }
-
-//   cycleImageRight()
 
 // TweenMax.to('#cactus-1', 1, {
 //     attr: {
