@@ -101,15 +101,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: $bug-border;
-  .skills-carousel{
+   .skills-carousel{
     display: flex;
     overflow-x: auto;
-    border: $bug-border;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-points-x: repeat(100vw);
-    scroll-snap-type: mandatory;
+    scroll-snap-type: x mandatory;
     .skills-items{
+      scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
