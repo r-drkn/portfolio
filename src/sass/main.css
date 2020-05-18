@@ -154,6 +154,7 @@ body {
 }
 
 .upper-section .skills-carousel {
+  margin-top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,6 +162,7 @@ body {
   -webkit-overflow-scrolling: touch;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
+  height: 60vh;
 }
 
 .upper-section .skills-carousel .skills-items {
@@ -172,15 +174,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  height: 300px;
+  height: 100%;
   width: 100vw;
 }
 

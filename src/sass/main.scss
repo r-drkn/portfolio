@@ -102,18 +102,20 @@ body {
   align-items: center;
   justify-content: center;
    .skills-carousel{
+     margin-top: 10vh;
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
+    height: 60vh;
     .skills-items{
       scroll-snap-align: start;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-around;
       flex-shrink: 0;
-      height: 300px;
+      height: 100%;
       width: 100vw;
       .skills-text{
         width: 70vw;
