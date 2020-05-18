@@ -30,7 +30,7 @@ body {
   -ms-grid-rows: 1fr 3fr 1fr 2fr 1fr;
   -ms-grid-columns: 1fr 3fr 1fr;
       grid-template: 1fr 3fr 1fr 2fr 1fr / 1fr 3fr 1fr;
-      grid-template-areas: "header header header" "upper-section upper-section upper-section" "lower-section lower-section lower-section" "lower-section lower-section lower-section" "footer footer footer";
+      grid-template-areas: "header header header" "upper-section upper-section upper-section" "upper-section upper-section upper-section" "lower-section lower-section lower-section" "footer footer footer";
 }
 
 .page-title {
@@ -137,6 +137,7 @@ body {
 .upper-section {
   height: 100%;
   -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: upper-section;
@@ -150,33 +151,23 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.upper-section .skill-icon {
-  height: 15vh;
-  fill: green;
-}
-
-.upper-section .skills-container {
-  overflow: hidden;
-  position: absolute;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px;
-  -ms-grid-rows: 30% 20%;
-      grid-template-rows: 30% 20%;
-      grid-template-areas: "js css ruby" "skills-text-1 skills-text-2 skills-text-3";
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
-  width: 800px;
   border: 2px solid red;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.upper-section .skills-container .skills-items {
+.upper-section .skills-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  border: 2px solid red;
+  -webkit-overflow-scrolling: touch;
+  -ms-scroll-snap-points-x: repeat(100vw);
+      scroll-snap-points-x: repeat(100vw);
+  -ms-scroll-snap-type: mandatory;
+      scroll-snap-type: mandatory;
+}
+
+.upper-section .skills-carousel .skills-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,48 +175,26 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  height: 300px;
+  width: 100vw;
 }
 
-.upper-section .skills-container .skills-text-1 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: skills-text-1;
+.upper-section .skills-carousel .skills-items .skills-text {
+  width: 70vw;
+  text-align: center;
 }
 
-.upper-section .skills-container .skills-text-2 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: skills-text-2;
-}
-
-.upper-section .skills-container .skills-text-3 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: skills-text-3;
-}
-
-.upper-section .skills-container #js-icon {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: js;
-}
-
-.upper-section .skills-container #css-icon {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: css;
-}
-
-.upper-section .skills-container #ruby-icon {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: ruby;
+.upper-section .skill-icon {
+  height: 15vh;
+  fill: green;
 }
 
 .upper-section .blog-img {
@@ -277,8 +246,7 @@ body {
 
 .lower-section {
   height: 100%;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: lower-section;
