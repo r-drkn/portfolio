@@ -20,45 +20,46 @@ const footerSlide = () => {
 
 footerSlide()
 
-var leftCounter = 0;
+var counter = 1;
 var leftChevron = document.querySelector('#left-chevron');
 var skillsImage = document.querySelector('#css-icon');
 leftChevron.addEventListener("click", cycleImageLeft);
 
 function cycleImageLeft(){
-    if (leftCounter == 0){
+    if (counter == 0){
       skillsImage.src ="../icons/javascript-icon.svg";
-      leftCounter++;
+      counter++;
     }
-    else if (leftCounter == 1){
+    else if (counter == 1){
         skillsImage.src = "../icons/ruby-icon.svg";
-      leftCounter++;
+      counter++;
     }
     else {
     skillsImage.src = "../icons/css-icon.svg";
-      leftCounter = 0;
+      counter = 0;
     }
   }
 
   cycleImageLeft()
 
-var rightCounter = 3;
 var rightChevron = document.querySelector('#right-chevron');
 var skillsImage = document.querySelector('#css-icon');
 rightChevron.addEventListener("click", cycleImageRight);
 
 function cycleImageRight(){
-    if (rightCounter == 3){
-      skillsImage.src ="../icons/javascript-icon.svg";
-      rightCounter--;
+    if (counter == 1){
+        skillsImage.src ="../icons/css-icon.svg";
+
+      counter--;
     }
-    else if (rightCounter == 2){
+    else if (counter == 0){
         skillsImage.src = "../icons/ruby-icon.svg";
-      rightCounter--;
+
+      counter--;
     }
     else {
-    skillsImage.src = "../icons/css-icon.svg";
-      rightCounter = 3;
+    skillsImage.src = "../icons/javascript-icon.svg";
+      counter = 0;
     }
   }
 
