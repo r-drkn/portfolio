@@ -59,6 +59,54 @@ body {
   margin: 0;
   line-height: 42px;
   letter-spacing: -1px;
+  padding: 0;
+  border: 0;
+  background: none;
+  -webkit-animation: flip 1s backwards;
+          animation: flip 1s backwards;
+}
+
+@-webkit-keyframes flip {
+  50% {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes flip {
+  50% {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+#menu.flip-back {
+  -webkit-animation: none;
+          animation: none;
+}
+
+#menu.menu-flip {
+  -webkit-animation: flip 1s forwards;
+          animation: flip 1s forwards;
+}
+
+@keyframes flip {
+  50% {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
 }
 
 #info {
@@ -69,6 +117,10 @@ body {
   position: absolute;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   right: -38px;
   bottom: 42px;
   line-height: 30px;
@@ -168,13 +220,13 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  -webkit-transform: translate3d(500px, 0, 0);
-          transform: translate3d(500px, 0, 0);
+  -webkit-transform: translate3d(0, 100vh, 0);
+          transform: translate3d(0, 100vh, 0);
   -webkit-transition: -webkit-transform 0.5s ease-out;
   transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
-  border-top-left-radius: 2rem;
+  border-top-left-radius: 4rem;
   -ms-flex-item-align: end;
       align-self: end;
 }
@@ -212,22 +264,22 @@ body {
           animation: menu-fade 1s forwards;
 }
 
-.nav .nav-items.open li:nth-child(1) {
+.nav .nav-items.open li:nth-child(4) {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
 
-.nav .nav-items.open li:nth-child(2) {
+.nav .nav-items.open li:nth-child(3) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 
-.nav .nav-items.open li:nth-child(3) {
+.nav .nav-items.open li:nth-child(2) {
   -webkit-animation-delay: 0.65s;
           animation-delay: 0.65s;
 }
 
-.nav .nav-items.open li:nth-child(4) {
+.nav .nav-items.open li:nth-child(1) {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
 }
@@ -325,6 +377,19 @@ body {
   width: 80vw;
 }
 
+.upper-section .blog-text {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.upper-section .lower-text {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  font-family: "Titillium Web", sans-serif;
+}
+
 .contact-items {
   height: 90%;
   width: 100%;
@@ -362,8 +427,13 @@ body {
 }
 
 .contact-items textarea {
-  resize: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.contact-items p {
+  font-family: "Hanken Book", sans-serif;
   font-size: 0.75rem;
 }
 
@@ -386,15 +456,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
-}
-
-.lower-section .lower-text {
-  text-align: center;
-  padding: 2rem;
-  z-index: 0;
-  font-family: "Titillium Web", sans-serif;
 }
 
 footer {
@@ -452,7 +513,6 @@ footer {
 
 .info-bar .info-icons {
   padding-top: 10px;
-  border-left: 2px solid black;
 }
 
 .info-bar .info-icons :active {
@@ -496,18 +556,43 @@ footer {
 }
 
 @media (min-width: 500px) {
-  nav {
+  .grid-container {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr auto 118px;
+    -ms-grid-columns: 1fr 3fr 1fr;
+        grid-template: 1fr auto 118px / 1fr 3fr 1fr;
+        grid-template-areas: "header header header" "upper-section upper-section upper-section" "footer footer footer";
+  }
+  #menu {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: header;
+    top: 0;
+  }
+  .nav {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
     background-color: #F8FF91;
   }
-  nav .nav-items {
+  .nav .nav-items {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: header;
+    -webkit-transform: none;
+            transform: none;
     background-color: rgba(51, 51, 51, 0);
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -520,37 +605,14 @@ footer {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    width: 100%;
   }
-  nav .nav-items a {
+  .nav .nav-items a {
     font-size: 1.5rem;
   }
-  nav .nav-items a :hover {
+  .nav .nav-items a :hover {
     color: rgba(241, 168, 235, 0.37);
     text-shadow: 0.5px 0.5px 0.5px white;
-  }
-  #toggle {
-    visibility: hidden;
-  }
-  #header {
-    position: fixed;
-    z-index: -1;
-  }
-  #logo:hover {
-    background-color: rgba(51, 51, 51, 0.37);
-    -webkit-transition: background 500ms ease;
-    transition: background 500ms ease;
-  }
-  .info-bar {
-    width: 45vw;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    -webkit-transition: -webkit-transform 0.5s ease-in;
-    transition: -webkit-transform 0.5s ease-in;
-    transition: transform 0.5s ease-in;
-    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
-  }
-  #info-icon {
-    visibility: hidden;
   }
 }
 /*# sourceMappingURL=main.css.map */

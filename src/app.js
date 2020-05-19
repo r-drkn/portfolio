@@ -1,12 +1,19 @@
 const navSlide = () => {
-    const toggle = document.querySelector('#menu');
+    const menu = document.querySelector('#menu');
     const nav = document.querySelector('.nav-items');
 
-    toggle.addEventListener('click',()=>{
-        nav.classList.toggle('open');
+    menu.addEventListener('click',()=>{
+        menu.classList.toggle('flip-back');
+        if (menu.innerHTML === "MENU") { setTimeout(() => {
+            nav.classList.toggle('open');
+            menu.classList.toggle('menu-flip');
+            menu.innerHTML = "CLOSE";
+          }, 500)} else { setTimeout(() => {
+            nav.classList.toggle('open');
+            menu.innerHTML = "MENU";
+            }, 500)};
     });
 }
-
 navSlide()
 
 const footerSlide = () => {
