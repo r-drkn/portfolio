@@ -62,51 +62,22 @@ body {
   padding: 0;
   border: 0;
   background: none;
-  -webkit-animation: flip 1s backwards;
-          animation: flip 1s backwards;
-}
-
-@-webkit-keyframes flip {
-  50% {
-    -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-}
-
-@keyframes flip {
-  50% {
-    -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-}
-
-#menu.flip-back {
-  -webkit-animation: none;
-          animation: none;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  -webkit-transition: -webkit-transform 0.35s ease-in;
+  transition: -webkit-transform 0.35s ease-in;
+  transition: transform 0.35s ease-in;
+  transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
 }
 
 #menu.menu-flip {
-  -webkit-animation: flip 1s forwards;
-          animation: flip 1s forwards;
-}
-
-@keyframes flip {
-  50% {
-    -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transition: -webkit-transform 0.7s ease-in;
+  transition: -webkit-transform 0.7s ease-in;
+  transition: transform 0.7s ease-in;
+  transition: transform 0.7s ease-in, -webkit-transform 0.7s ease-in;
+  letter-spacing: -4px;
 }
 
 #info {
@@ -222,10 +193,10 @@ body {
   position: absolute;
   -webkit-transform: translate3d(0, 100vh, 0);
           transform: translate3d(0, 100vh, 0);
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-  transition: -webkit-transform 0.5s ease-out;
-  transition: transform 0.5s ease-out;
-  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   border-top-left-radius: 4rem;
   -ms-flex-item-align: end;
       align-self: end;
@@ -245,6 +216,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  margin-bottom: 20vh;
 }
 
 .nav .nav-items.open {
@@ -303,13 +275,6 @@ body {
   text-decoration: none;
   color: black;
   font-weight: 1000;
-}
-
-.nav .nav-items .footer-gap {
-  height: 10vh;
-  display: inline-block;
-  width: 100%;
-  background-color: #F8FF91;
 }
 
 .upper-section {

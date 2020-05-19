@@ -59,28 +59,12 @@ body {
   padding: 0;
   border: 0;
   background: none;
-  animation: flip 1s backwards;
-    @keyframes flip {
-      50% {
-        transform: rotateX(90deg);
-      }
-      100% {
-        transform: rotateX(0deg);
-      }
-    }
-  &.flip-back{
-    animation: none;
-  }
+  transform: rotateX(0deg);
+  transition: transform 0.35s ease-in;
   &.menu-flip{
-    animation: flip 1s forwards;
-    @keyframes flip {
-      50% {
-        transform: rotateX(90deg);
-      }
-      100% {
-        transform: rotateX(0deg);
-      }
-    }  
+    transform: rotateX(180deg);
+    transition: transform 0.7s ease-in;
+    letter-spacing: -4px;
   }
 }
 #info {
@@ -152,7 +136,7 @@ body {
     height: 100%;
     position: absolute;
     transform: translate3d(0, 100vh, 0);
-    transition: transform 0.5s ease-out;
+    transition: transform 0.3s ease-out;
     border-top-left-radius: 4rem;
     align-self: end;
     ul {
@@ -162,6 +146,7 @@ body {
       justify-content: space-evenly;
       flex-direction: column;
       height: 100%;
+      margin-bottom: 20vh;
     }
     &.open {
       transform: translate3d(0, 0, 0);
@@ -197,12 +182,6 @@ body {
       text-decoration: none;
       color: black;
       font-weight: 1000;
-    }
-    .footer-gap {
-      height: 10vh;
-      display: inline-block;
-      width: 100%;
-      background-color: $primary-color;
     }
   }
 }
@@ -286,7 +265,6 @@ body {
     font-size: 0.75rem;
   }
 }
-
 .lower-section {
   height: 100%;
   grid-area: upper-section;
@@ -296,8 +274,6 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-
-
 }
 
 footer {

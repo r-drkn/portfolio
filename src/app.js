@@ -1,31 +1,37 @@
-const navSlide = () => {
-    const menu = document.querySelector('#menu');
-    const nav = document.querySelector('.nav-items');
 
-    menu.addEventListener('click',()=>{
-        menu.classList.toggle('flip-back');
-        if (menu.innerHTML === "MENU") { setTimeout(() => {
-            nav.classList.toggle('open');
-            menu.classList.toggle('menu-flip');
-            menu.innerHTML = "CLOSE";
-          }, 500)} else { setTimeout(() => {
-            nav.classList.toggle('open');
-            menu.innerHTML = "MENU";
-            }, 500)};
-    });
+const navSlide = () => {
+  const menu = document.querySelector("#menu");
+  const nav = document.querySelector(".nav-items");
+  let clicks = 0
+  
+  menu.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    if (clicks === 0){
+      menu.classList.toggle('menu-flip'); 
+      const close = () => {(menu.src = './icons/close.svg')};
+      setTimeout(close, 350);
+      clicks++;
+    } else {
+      menu.classList.toggle("menu-flip");
+      const close = () => {(menu.src = './icons/menu.svg')};
+      setTimeout(close, 175);
+      clicks--;
+    }
+  })
 }
-navSlide()
+
+navSlide();
 
 const footerSlide = () => {
-    const icon = document.querySelector('#info');
-    const bar = document.querySelector('.info-bar');
+  const icon = document.querySelector("#info");
+  const bar = document.querySelector(".info-bar");
 
-    icon.addEventListener('click',()=>{
-        bar.classList.toggle('info-open');
-    });
-}
+  icon.addEventListener("click", () => {
+    bar.classList.toggle("info-open");
+  });
+};
 
-footerSlide()
+footerSlide();
 
 // TweenMax.to('#cactus-1', 1, {
 //     attr: {
