@@ -9,12 +9,12 @@ const navSlide = () => {
     if (clicks === 0){
       menu.classList.toggle('menu-flip'); 
       const close = () => {(menu.src = './icons/close.svg')};
-      setTimeout(close, 350);
+      setTimeout(close, 450);
       clicks++;
     } else {
       menu.classList.toggle("menu-flip");
       const close = () => {(menu.src = './icons/menu.svg')};
-      setTimeout(close, 175);
+      setTimeout(close, 250);
       clicks--;
     }
   })
