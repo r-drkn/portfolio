@@ -59,9 +59,9 @@ body {
 }
 
 .blog .body-section {
-  -ms-scroll-snap-type: inherit;
-      scroll-snap-type: inherit;
-  scroll-snap-stop: always;
+  -ms-scroll-snap-type: mandatory;
+      scroll-snap-type: mandatory;
+  scroll-snap-stop: normal;
 }
 
 .blog .blog-title {

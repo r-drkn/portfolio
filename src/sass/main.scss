@@ -54,8 +54,8 @@ body {
 .blog {
   background-color: rgb(233, 233, 233);
   .body-section{
-    scroll-snap-type: inherit;
-    scroll-snap-stop: always;
+    scroll-snap-type: mandatory;
+    scroll-snap-stop: normal;
   }
   .blog-title {
     line-height: 30px;
