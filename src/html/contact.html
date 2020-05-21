@@ -10,26 +10,26 @@
     <title>Contact</title>
   </head>
 
-  <body>
+  <body class="contact">
     <div class="grid-container">
-        <header class="page-title"><h1>Contact Me</h1></header>
+        <header class="page-title"></header>
 
-      <section class="upper-section">
-        <div class="contact-items">
+      <section class="body-section">
+        <div class="contact-container">
           <form class="contact-form">
-            <p>
+            <p class= "form-item">
               <label for="name">Name</label
               ><input type="text" name="name" id="name" />
             </p>
-            <p>
+            <p class= "form-item">
               <label for="email">Email</label
               ><input type="email" name="email" id="email" />
             </p>
-            <p>
+            <p class= "form-item">
               <label for="phone">Phone</label
               ><input type="text" name="phone" id="phone" />
             </p>
-            <p>
+            <p class= "form-item">
               <label for="message">Message</label
               ><textarea name="message" id="message" rows="5"></textarea>
             </p>
@@ -37,8 +37,6 @@
           </form>
         </div>
       </section>
-      <section class="lower-section"></section>
-
       <!-- FOOTER AND NAV -->
       <nav class="nav">
           <div class="nav-items">
@@ -46,29 +44,27 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="#">Work</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="footer-gap"></div>
         </div>
       </nav>
       <footer>
-        <div>
-          <a href="#" id="menu">MENU</a>
+        <div class="menu">
+          <img id="menu" src="https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg" alt="menu" />
         </div>
         <div class="info-bar">
           <a href="#" class="footer-icons"
-            ><img src="./icons/twitter.svg" alt="Menu Button"
+            ><img src="../icons/twitter.svg" alt="Menu Button"
           /></a>
           <a href="#" class="footer-icons"
-            ><img src="./icons/github.svg" alt="Menu Button"
+            ><img src="../icons/github.svg" alt="Menu Button"
           /></a>
           <a href="#" class="footer-icons"
-            ><img src="./icons/linkedin.svg" alt="Menu Button"
+            ><img src="../icons/linkedin.svg" alt="Menu Button"
           /></a>
         </div>
-        <a href="#" id="info"
-          >INFO
+        <a href="#" class="info contact-title"
+          >CONTACT
         </a>
       </footer>
     </div>

@@ -8,12 +8,12 @@ const navSlide = () => {
     nav.classList.toggle("open");
     if (clicks === 0){
       menu.classList.toggle('menu-flip'); 
-      const close = () => {(menu.src = './icons/close.svg')};
-      setTimeout(close, 450);
+      const open = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/close.svg')};
+      setTimeout(open, 450);
       clicks++;
     } else {
       menu.classList.toggle("menu-flip");
-      const close = () => {(menu.src = './icons/menu.svg')};
+      const close = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg')};
       setTimeout(close, 250);
       clicks--;
     }
@@ -23,7 +23,7 @@ const navSlide = () => {
 navSlide();
 
 const footerSlide = () => {
-  const icon = document.querySelector("#info");
+  const icon = document.querySelector(".info");
   const bar = document.querySelector(".info-bar");
 
   icon.addEventListener("click", () => {
