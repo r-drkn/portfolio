@@ -359,6 +359,7 @@ nav {
   flex-direction: column;
   z-index: 1;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   border: $bug-border;
   }
   .work-icon {

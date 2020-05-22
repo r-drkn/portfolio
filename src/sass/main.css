@@ -532,6 +532,7 @@ nav .nav-items a {
           flex-direction: column;
   z-index: 1;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   border: 2px solid red;
 }
 
