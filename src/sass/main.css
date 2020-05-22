@@ -517,7 +517,7 @@ nav .nav-items a {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: body-section;
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   font-family: franklin-gothic-urw-comp, sans-serif;
   font-weight: 200;
