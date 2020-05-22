@@ -83,6 +83,7 @@ body {
 
 .blog-landing .blog-landing-image {
   width: 100%;
+  height: auto;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,7 +97,6 @@ body {
 }
 
 .blog-landing .blog-landing-image .blog-image {
-  height: 100%;
   border-radius: 10px;
 }
 

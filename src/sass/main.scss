@@ -66,12 +66,12 @@ body {
       margin-bottom: 40px;
       .blog-landing-image{
         width: 100%;
+        height: auto;
         border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         .blog-image{
-          height: 100%;
         border-radius: 10px;
         }
       }
