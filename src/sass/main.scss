@@ -57,16 +57,13 @@ body {
     scroll-snap-type: mandatory;
     scroll-snap-stop: normal;
     .blog-card-container{
-      height: 40vh;
-      width: 90%;
-      background-color: rgb(233, 233, 233);
+      width: minmax(90%, 300px);
       margin-top: 20px;
-      margin-right: 1rem;
       border-top: 1px solid black;
-      border: $bug-border;
+      // border-bottom: 1px solid $primary-color;
+      // border-right: 1px solid $primary-color;
       .blog-card-title{
-        font-size: 48px;
-        padding-right: 1rem;
+        font-size: 40px;
         a{
           text-decoration: none;
           color: black;
@@ -74,6 +71,7 @@ body {
       }
       .blog-card-date{
         border-bottom: 1px solid black;
+        border-right: 1px solid black;
       }
     }
   }
@@ -90,16 +88,24 @@ body {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    padding: 0 1rem 1rem 1rem;
+    justify-content: center;
     .blog-landing-image{
       width: 100%;
-      height: 40vh;
-      padding: 0px;
-      box-shadow: 5px 5px 5px #ccc;
+      height: 30vh;
       border-radius: 10px;
+      margin-bottom: 3rem;
+      margin-right: 2rem;
       .blog-image{
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
+      width: 100%;
+      border-radius: 10px;
+      }
+    }
+    .down-arrow{
+      margin-top: 10px;
+      align-self: center;
+      &:active{
+        opacity: 0.4;
       }
     }
   }
