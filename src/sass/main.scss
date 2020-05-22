@@ -52,10 +52,39 @@ body {
 
 .blog {
   background-color: rgb(233, 233, 233);
-  .body-section{
-    overflow-y: auto;
-    scroll-snap-type: mandatory;
-    scroll-snap-stop: normal;
+    .blog-landing{
+      margin-bottom: 10vh;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: space-evenly;
+      flex-direction: column;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      justify-content: center;
+      .blog-landing-image{
+        width: 100%;
+        height: 30vh;
+        border-radius: 10px;
+        margin-right: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .blog-image{
+          height: 100%;
+        border-radius: 10px;
+        }
+      }
+      .down-arrow{
+        margin-top: 10px;
+        align-self: center;
+        height: 10vh;
+        position: absolute;
+        bottom: 20px;
+        &:active{
+          opacity: 0.4;
+        }
+      }
+    }
     .blog-card-container{
       width: minmax(90%, 300px);
       margin-top: 20px;
@@ -72,6 +101,7 @@ body {
       .blog-card-date{
         border-bottom: 1px solid black;
         border-right: 1px solid black;
+        font-size: 1rem;
       }
     }
   }
@@ -81,35 +111,7 @@ body {
     bottom: 45px;
     letter-spacing: -3px;
   }
-  .blog-landing{
-    margin-bottom: 10vh;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 0 1rem 1rem 1rem;
-    justify-content: center;
-    .blog-landing-image{
-      width: 100%;
-      height: 30vh;
-      border-radius: 10px;
-      margin-bottom: 3rem;
-      margin-right: 2rem;
-      .blog-image{
-      width: 100%;
-      border-radius: 10px;
-      }
-    }
-    .down-arrow{
-      margin-top: 10px;
-      align-self: center;
-      &:active{
-        opacity: 0.4;
-      }
-    }
-  }
-}
+
 .contact {
   background-color: rgb(233, 233, 233);
   .contact-container {
@@ -333,7 +335,6 @@ nav {
   width: 100%;
   // scroll-snap-stop: normal;
   // scroll-snap-type: y mandatory;
-  overflow-y: auto;
   font-family: franklin-gothic-urw-comp, sans-serif;
   font-weight: 200;
   font-size: 2rem;
@@ -341,7 +342,9 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  scroll-snap-type: mandatory;
+  scroll-snap-stop: normal;
   }
   .work-icon {
     height: 15vh;
