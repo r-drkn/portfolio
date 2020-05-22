@@ -105,7 +105,7 @@ body {
 .blog .blog-title {
   line-height: 36px;
   right: -43px;
-  bottom: 38px;
+  bottom: 92px;
   letter-spacing: -3px;
 }
 
@@ -126,7 +126,6 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border: 2px solid red;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-bottom: 10vh;
@@ -184,7 +183,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 2px solid red;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -527,7 +525,6 @@ nav .nav-items a {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
-  border: 2px solid red;
 }
 
 .work-icon {
@@ -546,44 +543,39 @@ nav .nav-items a {
 }
 
 footer {
+  height: 48px;
+  width: 100%;
   z-index: 2;
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: rgba(51, 51, 51, 0);
-  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  border-top-left-radius: 10px;
+  background-color: #FF7E78;
+  padding-bottom: calc(env(safe-area-inset-bottom));
 }
 
-.info-bar {
+footer .info-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-transform: translateX(300px);
-          transform: translateX(300px);
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transition: -webkit-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
   width: 100%;
   z-index: 2;
+  line-height: -32px;
+  height: 100%;
+  padding-right: 10px;
 }
 
-.info-bar .info-icons {
-  margin-right: 15vw;
-  padding: 3.5px;
-}
-
-.info-bar .info-icons :active {
+footer .info-bar .info-icons :active {
   opacity: 0.4;
 }
 
