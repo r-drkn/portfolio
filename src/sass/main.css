@@ -113,7 +113,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  scroll-snap-align: end;
 }
 
 .blog .blog-landing .blog-landing-image {
