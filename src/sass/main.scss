@@ -43,13 +43,12 @@ body {
   overflow-y: hidden;
   height: 100%;
   display: grid;
-  grid-template: 46px auto 46px / 1fr 3fr 1fr;
+  grid-template: 20px 1fr 40px / 1fr 3fr 1fr;
   grid-template-areas:
     "header header header"
     "body-section body-section body-section"
     "footer footer footer";
 }
-
 
 .blog {
   background-color: rgb(233, 233, 233);
@@ -58,9 +57,9 @@ body {
     scroll-snap-stop: normal;
   }
   .blog-title {
-    line-height: 30px;
+    line-height: 38px;
     right: -43px;
-    bottom: 46px;
+    bottom: 45px;
     letter-spacing: -3px;
   }
   .blog-landing{
@@ -73,17 +72,23 @@ body {
     flex-direction: column;
     .blog-landing-image{
       width: 100%;
-      height: 30vh;
-      border: 2px solid $secondary-color;
-      padding: 20px;
+      height: 40vh;
+      padding: 0px;
+      box-shadow: 5px 5px 5px #ccc;
+      border-radius: 10px;
+      .blog-image{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
     }
   }
   .blog-card-container{
-    scroll-snap-align: start;
+    scroll-snap-align: end;
     height: 40vh;
     width: 90%;
     background-color: rgb(233, 233, 233);
-    margin-bottom: 20px;
+    margin-top: 20px;
     margin-right: 20px;
     border-top: 1px solid $secondary-color;
     .blog-card-title{
@@ -103,14 +108,13 @@ body {
 .contact {
   background-color: rgb(233, 233, 233);
   .contact-container {
-    border: $bug-border;
     height: 100%;
     font-family: $header-text;
     .contact-form {
-      box-shadow: 0 0 10px 0 rgba(241, 168, 235, 0.7);
+      // box-shadow: 0 0 10px 0 rgba(241, 168, 235, 0.7);
       border-radius: 5%;
       height: 50vh;
-      width: 80%;
+      width: 100%;
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -126,6 +130,7 @@ body {
         input{
           background-color: rgba(51, 51, 51, 0);
           border: none;
+          width: 100%;
         }
       } 
     }
@@ -147,8 +152,50 @@ body {
       font-size: 0.75rem;
     }
   }
+  .contact-title {
+    line-height: 30px;
+    right: -84px;
+    bottom: 90px;
+    letter-spacing: -4px;
+  }
 }
 
+.work {
+  background-color: rgb(233, 233, 233);
+  .work-carousel {
+    display: flex;
+    overflow-x: auto;
+    overflow-x: auto;
+    // -webkit-overflow-scrolling: auto;
+    scroll-snap-type: x mandatory;
+    height: 100%;
+    width: 100%;
+    h1{
+      font-family: $header-pair;
+    }
+    .work-items {
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      height: 100%;
+      width: 100%;
+      .work-text {
+        text-align: left;
+        padding: 30px;
+
+      }
+    }
+  }
+  .work-title{
+    line-height: 30px;
+    right: -48px;
+    bottom: 58px;
+    letter-spacing: -5px;
+  }
+  }
 
 #menu {
   position: absolute;
@@ -178,12 +225,6 @@ body {
 }
 
 
-.contact-title {
-  line-height: 30px;
-  right: -84px;
-  bottom: 90px;
-  letter-spacing: -4px;
-}
 .landing-intro-container {
   position: absolute;
   display: flex;
@@ -200,7 +241,7 @@ body {
     font-size: 13.3vw;
     line-height: 0px;
     letter-spacing: 0.05vw;
-    animation: linestack 3s forwards;
+    animation: linestack 1.5s forwards;
     @keyframes linestack {
       25% {
         line-height: 0px;
@@ -211,19 +252,7 @@ body {
     }
   }
 }
-.page-title {
-  font-family: "Syne Regular";
-  font-size: 54px;
-  text-decoration: none;
-  color: black;
-  grid-area: header;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0px;
-  margin: 0px;
-  line-height: 32px;
-  padding-bottom: 10px;
-}
+
 nav {
   grid-row: 1 / span 4;
   grid-column: 1 / -1;
@@ -241,6 +270,13 @@ nav {
     transition: transform 0.3s ease-out;
     border-top-left-radius: 4rem;
     align-self: end;
+    // This is to preserve z-index
+    animation: zindex 1s forwards;
+    @keyframes zindex {
+      100% {
+        z-index: 1;
+      }
+    }
     ul {
       list-style: none;
       text-align: center;
@@ -295,31 +331,14 @@ nav {
   overflow-y: auto;
   font-family: franklin-gothic-urw-comp, sans-serif;
   font-weight: 200;
+  font-size: 2rem;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
   -webkit-overflow-scrolling: touch;
-  .skills-carousel {
-    margin-top: 10vh;
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    height: 50vh;
-    .skills-items {
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      flex-shrink: 0;
-      height: 100%;
-      width: 100vw;
-      .skills-text {
-        width: 70vw;
-        text-align: center;
-      }
-    }
   }
-  .skill-icon {
+  .work-icon {
     height: 15vh;
     fill: green;
   }
@@ -334,8 +353,6 @@ nav {
     padding: 10px;
 
   }
-
-}
 .lower-section {
   height: 100%;
   grid-area: body-section;
@@ -352,6 +369,7 @@ footer {
   align-items: flex-start;
   justify-content: center;
   padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  z-index: 1;
 }
 .info-bar {
   grid-area: footer;
@@ -359,7 +377,7 @@ footer {
   justify-content: flex-end;
   flex-direction: column;
   align-items: flex-end;
-  transform: translateX(200px);
+  transform: translateX(300px);
   transition: transform 0.2s ease-out;
   width: 100%;
   .info-icons {
@@ -403,7 +421,7 @@ footer {
     overflow-y: hidden;
     height: 100%;
     display: grid;
-    grid-template: 1fr auto 118px / 1fr 3fr 1fr;
+    grid-template: 10vh auto 118px / 1fr 3fr 1fr;
     grid-template-areas:
       "header header header"
       "body-section body-section body-section"
@@ -412,32 +430,42 @@ footer {
   #menu {
     grid-area: header;
     top: 0;
+    display: none;
     &:hover{
       cursor: pointer;
     }
   }
   .nav {
-    justify-content: space-between;
+    grid-area: header;
     .nav-items {
-      grid-area: header;
-      transform: none;
       background-color: rgba(51, 51, 51, 0);
       flex-direction: row;
       justify-content: space-between;
-      transition: transform 0.5s ease-in;
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      transform: translate3d(0, -100vh, 0);
+      justify-content: flex-end;
+      transform: translate3d(0, -100px, 0);
       transition: transform 0.3s ease-out;
+      animation: nav-drop 0.5s forwards;
+      @keyframes nav-drop {
+        0% {
+          transform: translated3d(0, 100px, 0)
+        }
+        100% {
+          transform: translate3d(0, 0, 0)
+        }
+      }
       ul {
         flex-direction: row;
-        width: 100%;
-        justify-content: flex-end;
+        width: 50%;
+        justify-content: space-between;
         font-size: 1.5rem;
-        :hover {
-          text-shadow: 0.5px 0.5px 0.5px #ABD7FF;
+        a {
+        &:hover {
+          text-shadow: 1px 0.5px 0.5px #ABD7FF;
         }
+      }
       }
     }
   }
@@ -450,13 +478,12 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     left: 0px;
-    top: 40vh;
+    top: 30vh;
     width: 100%;
     height: 250px;
     .landing-intro-text {
-      margin-left: 15vw;
       color: black;
-      font-size: 10vw;
+      font-size: 8vw;
       @keyframes linestack {
         25% {
           line-height: 0px;
@@ -464,6 +491,9 @@ footer {
         100% {
           line-height: 80px;
         }
+      }
+      &:hover {
+        text-shadow: 1px 0.5px 0.5px #ABD7FF;
       }
 }
   }
