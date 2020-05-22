@@ -43,7 +43,7 @@ body {
   overflow-y: hidden;
   height: 100%;
   display: grid;
-  grid-template: 20px 1fr 40px / 1fr 3fr 1fr;
+  grid-template: 20px 1fr 20px / 1fr 3fr 1fr;
   grid-template-areas:
     "header header header"
     "body-section body-section body-section"
@@ -53,21 +53,19 @@ body {
 .blog {
   background-color: rgb(233, 233, 233);
     .blog-landing{
-      margin-bottom: 10vh;
-      height: 100vh;
+      height: 100%;
       width: 100%;
       display: flex;
-      align-items: space-evenly;
+      align-items: flex-start;
       flex-direction: column;
-      padding: 0 1.5rem 1.5rem 1.5rem;
-      justify-content: center;
+      padding: 2rem 2rem 0px 2rem;
+      justify-content: flex-start;
       border: $bug-border;
       flex-shrink: 0;
+      margin-bottom: 40px;
       .blog-landing-image{
         width: 100%;
-        height: 30vh;
         border-radius: 10px;
-        margin-right: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -79,41 +77,52 @@ body {
       .down-arrow{
         margin-top: 10px;
         align-self: center;
+        justify-self: flex-end;
         height: 10vh;
-        bottom: 20px;
         &:active{
           opacity: 0.4;
         }
       }
     }
-    .blog-card-container{
-      width: minmax(90%, 300px);
-      margin-top: 20px;
-      border-top: 1px solid black;
-      height: 30vh;
-      // border-bottom: 1px solid $primary-color;
-      // border-right: 1px solid $primary-color;
-      .blog-card-title{
-        font-size: 40px;
-        a{
-          text-decoration: none;
-          color: black;
-        }
-      }
-      .blog-card-date{
-        border-bottom: 1px solid black;
-        border-right: 1px solid black;
-        font-size: 1rem;
-      }
-    }
+    
   }
-  .blog-title {
+.blog-title {
     line-height: 38px;
     right: -43px;
     bottom: 45px;
     letter-spacing: -3px;
+}
+.blog-older{
+  scroll-snap-align: start;
+  width: 100%;
+  display: flex;
+  align-items: space-evenly;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: center;
+  border: $bug-border;
+  flex-shrink: 0;
+}
+.blog-card-container{
+  margin-top: 5vh;
+  border-top: 1px solid black;
+  height: 30vh;
+  width: 100%;
+  // border-bottom: 1px solid $primary-color;
+  // border-right: 1px solid $primary-color;
+  .blog-card-title{
+    font-size: 40px;
+    a{
+      text-decoration: none;
+      color: black;
+    }
   }
-
+  .blog-card-date{
+    border-bottom: 1px solid black;
+    font-size: 1rem;
+  }
+}
+  
 .contact {
   background-color: rgb(233, 233, 233);
   .contact-container {
@@ -345,8 +354,7 @@ nav {
   flex-direction: column;
   z-index: 1;
   overflow-y: scroll;
-  scroll-snap-type: mandatory;
-  scroll-snap-stop: normal;
+  scroll-snap-type: y proximity;
   }
   .work-icon {
     height: 15vh;
@@ -523,12 +531,6 @@ footer {
 //     color: #333;
 //     transition: background 300ms ease;
 // }
-
-// Delay each Nav item slide
-// https://youtu.be/92J-3ajM0dI?t=953
-
-// transform: translate3d(0, 0, 0,)
-// transform: translate3d(0, 100%, 0,)
 
 // Animate smooth scroll
 
