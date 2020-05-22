@@ -61,6 +61,8 @@ body {
       flex-direction: column;
       padding: 0 1.5rem 1.5rem 1.5rem;
       justify-content: center;
+      border: $bug-border;
+      flex-shrink: 0;
       .blog-landing-image{
         width: 100%;
         height: 30vh;
@@ -78,7 +80,6 @@ body {
         margin-top: 10px;
         align-self: center;
         height: 10vh;
-        position: absolute;
         bottom: 20px;
         &:active{
           opacity: 0.4;
@@ -89,6 +90,7 @@ body {
       width: minmax(90%, 300px);
       margin-top: 20px;
       border-top: 1px solid black;
+      height: 30vh;
       // border-bottom: 1px solid $primary-color;
       // border-right: 1px solid $primary-color;
       .blog-card-title{
@@ -342,7 +344,7 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
   scroll-snap-type: mandatory;
   scroll-snap-stop: normal;
   }
