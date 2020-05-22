@@ -354,7 +354,8 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
+  border: $bug-border;
   }
   .work-icon {
     height: 15vh;

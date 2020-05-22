@@ -527,7 +527,8 @@ nav .nav-items a {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
+  border: 2px solid red;
 }
 
 .work-icon {
