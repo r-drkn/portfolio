@@ -90,9 +90,9 @@ body {
     }
     
 .blog-title {
-    line-height: 38px;
+    line-height: 36px;
     right: -43px;
-    bottom: 45px;
+    bottom: 38px;
     letter-spacing: -3px;
 }
 .blog-older{
@@ -359,6 +359,7 @@ nav {
   flex-direction: column;
   z-index: 1;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   border: $bug-border;
   }
   .work-icon {
@@ -385,7 +386,6 @@ footer {
   padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
 }
 .info-bar {
-  grid-area: footer;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;

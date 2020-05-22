@@ -119,9 +119,9 @@ body {
 }
 
 .blog-title {
-  line-height: 38px;
+  line-height: 36px;
   right: -43px;
-  bottom: 45px;
+  bottom: 38px;
   letter-spacing: -3px;
 }
 
@@ -533,6 +533,7 @@ nav .nav-items a {
           flex-direction: column;
   z-index: 1;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   border: 2px solid red;
 }
 
@@ -561,7 +562,6 @@ footer {
 }
 
 .info-bar {
-  grid-area: footer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
