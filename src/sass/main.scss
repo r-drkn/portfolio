@@ -52,6 +52,7 @@ body {
 
 .blog {
   background-color: rgb(233, 233, 233);
+}
     .blog-landing{
       height: 100%;
       width: 100%;
@@ -75,7 +76,7 @@ body {
         }
       }
       .down-arrow{
-        margin-top: 10px;
+        bottom: 10px;
         align-self: center;
         justify-self: flex-end;
         height: 10vh;
@@ -85,7 +86,6 @@ body {
       }
     }
     
-  }
 .blog-title {
     line-height: 38px;
     right: -43px;

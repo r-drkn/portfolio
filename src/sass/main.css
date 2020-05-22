@@ -58,7 +58,7 @@ body {
   background-color: #e9e9e9;
 }
 
-.blog .blog-landing {
+.blog-landing {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -81,7 +81,7 @@ body {
   margin-bottom: 40px;
 }
 
-.blog .blog-landing .blog-landing-image {
+.blog-landing .blog-landing-image {
   width: 100%;
   border-radius: 10px;
   display: -webkit-box;
@@ -95,13 +95,13 @@ body {
           justify-content: center;
 }
 
-.blog .blog-landing .blog-landing-image .blog-image {
+.blog-landing .blog-landing-image .blog-image {
   height: 100%;
   border-radius: 10px;
 }
 
-.blog .blog-landing .down-arrow {
-  margin-top: 10px;
+.blog-landing .down-arrow {
+  bottom: 10px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -109,7 +109,7 @@ body {
   height: 10vh;
 }
 
-.blog .blog-landing .down-arrow:active {
+.blog-landing .down-arrow:active {
   opacity: 0.4;
 }
 
