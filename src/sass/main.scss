@@ -36,12 +36,14 @@ body {
   overflow-y: hidden;
   height: 100%;
   background-color: $primary-color;
+  overscroll-behavior-y: none;
 }
 .grid-container {
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template: 1fr 20px / 1fr 3fr 1fr;
   grid-template-areas:
@@ -345,8 +347,8 @@ nav {
 }
 .body-section {
   grid-area: body-section;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   font-family: franklin-gothic-urw-comp, sans-serif;
   font-weight: 200;
   font-size: 2rem;
@@ -355,6 +357,7 @@ nav {
   flex-direction: column;
   z-index: 1;
   overflow-y: auto;
+  scroll-behavior: smooth;
   border: $bug-border;
   }
   .work-icon {
