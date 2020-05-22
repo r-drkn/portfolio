@@ -43,9 +43,8 @@ body {
   overflow-y: hidden;
   height: 100%;
   display: grid;
-  grid-template: 20px 1fr 20px / 1fr 3fr 1fr;
+  grid-template: 1fr 20px / 1fr 3fr 1fr;
   grid-template-areas:
-    "header header header"
     "body-section body-section body-section"
     "footer footer footer";
 }
@@ -54,7 +53,7 @@ body {
   background-color: rgb(233, 233, 233);
 }
     .blog-landing{
-      height: 100%;
+      height: 90vh;
       width: 100%;
       display: flex;
       align-items: flex-start;
@@ -63,7 +62,7 @@ body {
       justify-content: flex-start;
       border: $bug-border;
       flex-shrink: 0;
-      margin-bottom: 40px;
+      margin-bottom: 10vh;
       .blog-landing-image{
         width: 100%;
         height: 30vh;
