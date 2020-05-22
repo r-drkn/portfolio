@@ -532,8 +532,7 @@ nav .nav-items a {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
   border: 2px solid red;
 }
 
@@ -720,7 +719,7 @@ footer {
     font-size: 1.5rem;
   }
   .nav .nav-items ul a:hover {
-    text-shadow: 1px 0.5px 0.5px #ABD7FF;
+    text-shadow: 1px 0.5px 0.5px #abd7ff;
   }
   .body-section {
     -ms-grid-columns: 8vw 10fr 8vw;
@@ -765,7 +764,7 @@ footer {
     }
   }
   .landing-intro-container .landing-intro-text:hover {
-    text-shadow: 1px 0.5px 0.5px #ABD7FF;
+    text-shadow: 1px 0.5px 0.5px #abd7ff;
   }
 }
 /*# sourceMappingURL=main.css.map */
