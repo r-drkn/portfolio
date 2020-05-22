@@ -226,6 +226,7 @@ body {
   margin: 0;
   transform: rotateX(0deg);
   transition: transform 0.35s ease-in;
+  z-index: 2;
   &.menu-flip{
     transform: rotateX(180deg);
     transition: transform 0.7s ease-in;
@@ -244,6 +245,7 @@ body {
   bottom: 42px;
   line-height: 30px;
   letter-spacing: -1px;
+  z-index: 2;
 }
 
 
@@ -356,8 +358,7 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+  overflow-y: scroll;
   border: $bug-border;
   }
   .work-icon {

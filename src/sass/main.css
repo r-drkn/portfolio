@@ -309,6 +309,7 @@ body {
   transition: -webkit-transform 0.35s ease-in;
   transition: transform 0.35s ease-in;
   transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
+  z-index: 2;
 }
 
 #menu.menu-flip {
@@ -337,6 +338,7 @@ body {
   bottom: 42px;
   line-height: 30px;
   letter-spacing: -1px;
+  z-index: 2;
 }
 
 .landing-intro-container {
@@ -529,8 +531,7 @@ nav .nav-items a {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+  overflow-y: scroll;
   border: 2px solid red;
 }
 
