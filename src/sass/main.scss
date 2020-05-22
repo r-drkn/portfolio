@@ -160,8 +160,6 @@ body {
       margin: 10px;
     }
     textarea {
-      -webkit-overflow-scrolling: touch;
-      overflow-y: auto;
       width: 100%;
       background-color: rgba(51, 51, 51, 0);
       border: none;
@@ -311,7 +309,6 @@ nav {
       transform: translate3d(0, 0, 0);
       transition: transform 0.5s ease-in;
       width: 100%;
-      overflow: auto;
       li {
         opacity: 0;
         animation: menu-fade 1s forwards;
@@ -354,7 +351,6 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  overflow: scroll;
   border: $bug-border;
 }
 .work-icon {
