@@ -48,6 +48,7 @@ body {
   grid-template: 1fr 20px / 1fr 3fr 1fr;
   grid-template-areas:
     "body-section body-section body-section"
+    "footer footer footer";
 }
 
 .blog {
@@ -348,7 +349,7 @@ nav {
 }
 .body-section {
   grid-area: body-section;
-  height: 95vh;
+  height: 100%;
   width: 100vw;
   font-family: franklin-gothic-urw-comp, sans-serif;
   font-weight: 200;
