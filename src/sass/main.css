@@ -463,6 +463,32 @@ header {
   transition: transform 0.7s ease-in;
   transition: transform 0.7s ease-in, -webkit-transform 0.7s ease-in;
   letter-spacing: -4px;
+  z-index: 3;
+}
+
+svg {
+  position: absolute;
+  right: 100px;
+  top: 50px;
+}
+
+svg .path {
+  stroke-dashoffset: 2100;
+  stroke-dasharray: 2100;
+  -webkit-animation: dash 7s linear forwards;
+          animation: dash 7s linear forwards;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .nav {

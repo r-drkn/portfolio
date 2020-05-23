@@ -318,8 +318,25 @@ header {
     transform: rotateX(180deg);
     transition: transform 0.7s ease-in;
     letter-spacing: -4px;
+    z-index: 3;
   }
 }
+svg{
+  position: absolute;
+  right: 100px;
+  top: 50px;
+.path{
+  stroke-dashoffset: 2100;
+  stroke-dasharray: 2100;
+  animation: dash 7s linear forwards;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+}
+
 .nav {
   grid-column: 1 / -1;
   position: sticky;
