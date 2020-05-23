@@ -43,7 +43,6 @@ body {
 .grid-container {
   position: relative;
   overflow-x: hidden;
-  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
   display: -ms-grid;
@@ -71,6 +70,7 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  z-index: 2;
 }
 
 header #menu {

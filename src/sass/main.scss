@@ -38,7 +38,6 @@ body {
 .grid-container {
   position: relative;
   overflow-x: hidden;
-  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -53,6 +52,7 @@ header {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  z-index: 2;
 #menu {
   transform: rotateX(0deg);
   transition: transform 0.35s ease-in;
