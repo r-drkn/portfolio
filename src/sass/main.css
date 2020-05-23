@@ -129,7 +129,7 @@ header {
 }
 
 .blog-landing {
-  height: 90vh;
+  height: 60vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,13 +141,12 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 2rem 2rem 0px 2rem;
+  padding: 1rem 2rem 0px 2rem;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  margin-bottom: 10vh;
 }
 
 .blog-landing .blog-landing-image {
@@ -402,8 +401,8 @@ header {
 
 nav {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
-  grid-row: 1 / span 4;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
   grid-column: 1 / -1;
   position: relative;
 }
@@ -433,7 +432,7 @@ nav .nav-items {
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   border-bottom-left-radius: 4rem;
-  padding-bottom: calc(env(safe-area-inset-bottom));
+  margin-bottom: calc(env(safe-area-inset-bottom));
   -webkit-animation: zindex 1s forwards;
           animation: zindex 1s forwards;
 }
