@@ -50,6 +50,7 @@ body {
   -ms-grid-rows: 60px 1fr;
   -ms-grid-columns: auto auto auto;
       grid-template: 60px 1fr / auto auto auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .grid-container.noscroll {
@@ -120,7 +121,7 @@ header #menu.menu-flip {
 .blog .blog-title {
   line-height: 36px;
   right: -43px;
-  bottom: 92px;
+  bottom: 44px;
   letter-spacing: -3px;
 }
 
@@ -537,8 +538,6 @@ nav .nav-items a {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 .work-icon {

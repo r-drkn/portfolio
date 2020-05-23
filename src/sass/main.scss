@@ -42,6 +42,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template: 60px 1fr / auto auto auto;
+  -webkit-overflow-scrolling: touch;
   &.noscroll{
     overflow-y: hidden;
   }
@@ -87,7 +88,7 @@ header {
   .blog-title {
     line-height: 36px;
     right: -43px;
-    bottom: 92px;
+    bottom: 44px;
     letter-spacing: -3px;
   }
 }
@@ -352,8 +353,6 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 .work-icon {
   height: 15vh;
