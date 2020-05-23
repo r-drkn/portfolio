@@ -31,7 +31,6 @@ html {
 
 body {
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
   height: 100%;
   background-color: $primary-color;
   overscroll-behavior-y: none;
@@ -39,20 +38,22 @@ body {
 .grid-container {
   position: relative;
   overflow-x: hidden;
-  &.noscroll{
-    overflow-y: hidden;
-  }
+  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template: 1fr / 1fr 3fr 1fr;
-  grid-template-areas: "body-section body-section body-section";
+  grid-template: 60px 1fr / auto auto auto;
+  &.noscroll{
+    overflow-y: hidden;
+  }
 }
+header {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 #menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin: 0;
   transform: rotateX(0deg);
   transition: transform 0.35s ease-in;
   z-index: 2;
@@ -61,6 +62,7 @@ body {
     transition: transform 0.7s ease-in;
     letter-spacing: -4px;
   }
+}
 }
 .info {
   font-family: "Syne Regular";
@@ -337,7 +339,8 @@ nav {
   }
 }
 .body-section {
-  grid-area: body-section;
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
   height: 100%;
   width: 100vw;
   font-family: franklin-gothic-urw-comp, sans-serif;
@@ -347,6 +350,8 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 1;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .work-icon {
   height: 15vh;
@@ -362,12 +367,13 @@ nav {
   font-size: 1rem;
   padding: 10px;
 }
-header {
+footer {
+  border: $bug-border;
   height: 48px;
   width: 100%;
   z-index: 2;
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
   padding-bottom: calc(env(safe-area-inset-bottom));
 }
