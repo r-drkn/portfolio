@@ -81,7 +81,7 @@ header {
   transition: -webkit-transform 0.35s ease-in;
   transition: transform 0.35s ease-in;
   transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   top: 0;
   right: 0;
