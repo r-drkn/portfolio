@@ -71,7 +71,7 @@ header {
       -ms-flex-pack: end;
           justify-content: flex-end;
   z-index: 2;
-  background-color: #e9e9e9;
+  background-color: #FDFFDE;
 }
 
 .info {
@@ -95,7 +95,7 @@ header {
 }
 
 .blog {
-  background-color: #e9e9e9;
+  background-color: #FDFFDE;
 }
 
 .blog .blog-title {
@@ -204,7 +204,7 @@ header {
 }
 
 .contact {
-  background-color: #e9e9e9;
+  background-color: #FDFFDE;
 }
 
 .contact .contact-container {
@@ -330,7 +330,7 @@ header {
 }
 
 .work {
-  background-color: #e9e9e9;
+  background-color: #FDFFDE;
 }
 
 .work .work-carousel {
@@ -347,6 +347,7 @@ header {
 
 .work .work-carousel h1 {
   font-family: "Syne Regular", sans-serif;
+  font-size: 4rem;
 }
 
 .work .work-carousel .work-items {
@@ -368,11 +369,38 @@ header {
       flex-shrink: 0;
   height: 100%;
   width: 100%;
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.work .work-carousel .work-items .work-header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.work .work-carousel .work-items .work-header-container img {
+  width: 3rem;
+  display: none;
 }
 
 .work .work-carousel .work-items .work-text {
   text-align: left;
-  padding: 30px;
+  margin-top: 1rem;
+  border-top: 2px solid black;
 }
 
 .work .work-title {
@@ -429,17 +457,36 @@ header {
   }
 }
 
-.landing-intro-container .landing-image {
+.landing-animation svg {
   position: absolute;
-  right: 0;
-  top: 0;
-  margin-right: 50px;
-  z-index: 0;
+  right: 80px;
+  top: -24px;
 }
 
-.landing-intro-container .landing-image img {
-  width: 300px;
-  z-index: 0;
+.landing-animation svg .path {
+  stroke-dashoffset: 2100;
+  stroke-dasharray: 2100;
+  -webkit-animation: dash 6s linear forwards;
+          animation: dash 6s linear forwards;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.about-title {
+  right: -64px;
+  bottom: 70px;
+  line-height: 30px;
+  letter-spacing: -1px;
 }
 
 #menu {
@@ -466,31 +513,6 @@ header {
   z-index: 3;
 }
 
-svg {
-  position: absolute;
-  right: 80px;
-  top: -24px;
-}
-
-svg .path {
-  stroke-dashoffset: 2100;
-  stroke-dasharray: 2100;
-  -webkit-animation: dash 7s linear forwards;
-          animation: dash 7s linear forwards;
-}
-
-@-webkit-keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 .nav {
   grid-column: 1 / -1;
   position: -webkit-sticky;
@@ -502,7 +524,6 @@ svg .path {
 
 .nav .nav-items {
   background: #FF7E78;
-  opacity: 0.95;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -527,20 +548,6 @@ svg .path {
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   border-bottom-left-radius: 4rem;
   padding-bottom: calc(env(safe-area-inset-bottom));
-  -webkit-animation: zindex 1s forwards;
-          animation: zindex 1s forwards;
-}
-
-@-webkit-keyframes zindex {
-  100% {
-    z-index: 2;
-  }
-}
-
-@keyframes zindex {
-  100% {
-    z-index: 2;
-  }
 }
 
 .nav .nav-items ul {
@@ -612,7 +619,7 @@ svg .path {
   letter-spacing: 5px;
   text-transform: bodycase;
   text-decoration: none;
-  color: #e9e9e9;
+  color: #FDFFDE;
 }
 
 .body-section {

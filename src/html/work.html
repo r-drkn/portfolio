@@ -9,17 +9,44 @@
 
   <body class="work">
     <div class="grid-container">
+      <header></header>
       <section class="body-section">
         <div class="work-carousel">
           <div class="work-items">
-            <img
-              id="css-icon"
-              class="work-icon"
-              src="../icons/css-icon.svg"
-              alt="CSS Icon"
-            />
-            <div class="work-text">
+            <div class="work-header-container">
               <h1>CSS</h1>
+              <img
+                id="css-icon"
+                class="work-icon"
+                src="../icons/css-icon.svg"
+                alt="CSS Icon"
+              />
+            </div>
+            <div class="work-text">
+              <p>
+                Reasons for my writing about the thing are many, including but
+                not limited to this thing and another thing. It's of great
+                importance that you really understand why I'm explaining such
+                things. Reasons for my writing about the thing are many,
+                including but not limited to this thing and another thing. It's
+                of great importance that you really understand why I'm
+                explaining such things.
+              </p>
+            </div>
+          </div>
+          <div class="work-items">
+            <div class="work-header-container">
+              <h1>
+                Javascript<img
+                  id="javascript-icon"
+                  class="work-icon"
+                  src="../icons/javascript-icon.svg"
+                  alt="Javascript Icon"
+                />
+              </h1>
+            </div>
+
+            <div class="work-text">
               <p>
                 Reasons for my writing about the thing are many, including but
                 not limited to this thing and another thing. It's of great
@@ -29,31 +56,17 @@
             </div>
           </div>
           <div class="work-items">
-            <img
-              id="javascript-icon"
-              class="work-icon"
-              src="../icons/javascript-icon.svg"
-              alt="Javascript Icon"
-            />
-            <div class="work-text">
-              <h1>Javascript</h1>
-              <p>
-                Reasons for my writing about the thing are many, including but
-                not limited to this thing and another thing. It's of great
-                importance that you really understand why I'm explaining such
-                things.
-              </p>
-            </div>
-          </div>
-          <div class="work-items">
-            <img
-              id="ruby-icon"
-              class="work-icon"
-              src="../icons/ruby-icon.svg"
-              alt="Ruby Icon"
-            />
-            <div class="work-text">
+            <div class="work-header-container">
               <h1>Ruby</h1>
+              <img
+                id="ruby-icon"
+                class="work-icon"
+                src="../icons/ruby-icon.svg"
+                alt="Ruby Icon"
+              />
+            </div>
+
+            <div class="work-text">
               <p>
                 Reasons for my writing about the thing are many, including but
                 not limited to this thing and another thing. It's of great
@@ -65,16 +78,6 @@
         </div>
       </section>
       <nav class="nav">
-        <div class="nav-items">
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <footer>
         <div class="menu">
           <img
             id="menu"
@@ -82,6 +85,18 @@
             alt="menu"
           />
         </div>
+        <div class="nav-items">
+          <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="work.html">work</a></li>
+            <li><a href="contact.html">contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <footer>
+        <div class="title"><a href="#" class="info work-title">WORK </a></div>
+
         <div class="info-bar">
           <a href="#" class="info-icons"
             ><img src="../icons/twitter.svg" alt="Twitter Button"
@@ -93,7 +108,6 @@
             ><img src="../icons/linkedin.svg" alt="LinkedIn Button"
           /></a>
         </div>
-        <a href="#" class="info work-title">WORK </a>
       </footer>
     </div>
     <script src="../app.js"></script>

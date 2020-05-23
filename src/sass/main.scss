@@ -55,7 +55,7 @@ header {
   align-items: flex-start;
   justify-content: flex-end;
   z-index: 2;
-  background-color: rgb(233, 233, 233);
+  background-color: $white-color;
 }
 
 .info {
@@ -75,7 +75,7 @@ header {
 }
 
 .blog {
-  background-color: rgb(233, 233, 233);
+  background-color: $white-color;
   .blog-title {
     line-height: 36px;
     right: -43px;
@@ -147,7 +147,7 @@ header {
 }
 
 .contact {
-  background-color: rgb(233, 233, 233);
+  background-color: $white-color;
   .contact-container {
     height: 100%;
     padding: 1rem;
@@ -232,17 +232,17 @@ header {
 }
 
 .work {
-  background-color: rgb(233, 233, 233);
+  background-color: $white-color;
   .work-carousel {
     display: flex;
     overflow-x: auto;
     overflow-x: auto;
-    // -webkit-overflow-scrolling: auto;
     scroll-snap-type: x mandatory;
     height: 100%;
     width: 100%;
     h1 {
       font-family: $header-pair;
+      font-size: 4rem;
     }
     .work-items {
       scroll-snap-align: start;
@@ -253,9 +253,25 @@ header {
       flex-shrink: 0;
       height: 100%;
       width: 100%;
+      padding: 1.5rem;
+      padding-top: 0;
+      .work-header-container{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        img {
+          width: 3rem;
+          display: none;
+        }
+      }
       .work-text {
         text-align: left;
-        padding: 30px;
+        margin-top: 1rem;
+        border-top: 2px solid black;
       }
     }
   }
@@ -295,17 +311,30 @@ header {
       }
     }
   }
-  .landing-image{
+  
+}
+.landing-animation{
+  svg{
     position: absolute;
-    right: 0;
-    top: 0;
-    margin-right: 50px;
-    z-index: 0;
-    img{
-      width: 300px;
-      z-index: 0;
+    right: 80px;
+    top: -24px;
+  .path{
+    stroke-dashoffset: 2100;
+    stroke-dasharray: 2100;
+    animation: dash 6s linear forwards;
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
     }
   }
+  }
+}
+.about-title{
+  right: -64px;
+  bottom: 70px;
+  line-height: 30px;
+  letter-spacing: -1px;
 }
 #menu {
   transform: rotateX(0deg);
@@ -321,21 +350,7 @@ header {
     z-index: 3;
   }
 }
-svg{
-  position: absolute;
-  right: 80px;
-  top: -24px;
-.path{
-  stroke-dashoffset: 2100;
-  stroke-dasharray: 2100;
-  animation: dash 7s linear forwards;
-}
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-}
+
 
 .nav {
   grid-column: 1 / -1;
@@ -345,7 +360,6 @@ svg{
   z-index: 2;
   .nav-items {
     background: $secondary-color;
-    opacity: 0.95;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -357,12 +371,6 @@ svg{
     transition: transform 0.3s ease-out;
     border-bottom-left-radius: 4rem;
     padding-bottom: calc(env(safe-area-inset-bottom));
-    animation: zindex 1s forwards;
-    @keyframes zindex {
-      100% {
-        z-index: 2;
-      }
-    }
     ul {
       list-style: none;
       text-align: center;
