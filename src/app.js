@@ -2,7 +2,6 @@
 const navSlide = () => {
   const menu = document.querySelector("#menu");
   const nav = document.querySelector(".nav-items");
-  const body = document.querySelector(".grid-container");
   let clicks = 0;
   
   menu.addEventListener("click", () => {
@@ -11,13 +10,11 @@ const navSlide = () => {
       menu.classList.toggle('menu-flip'); 
       const open = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/close.svg')};
       setTimeout(open, 450);
-      body.classList.toggle('noscroll');
       clicks++;
     } else {
       menu.classList.toggle("menu-flip");
       const close = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg')};
       setTimeout(close, 250);
-      body.classList.toggle('noscroll');
       clicks--;
     }
   })
