@@ -468,8 +468,8 @@ header {
 
 svg {
   position: absolute;
-  right: 100px;
-  top: 50px;
+  right: 80px;
+  top: -24px;
 }
 
 svg .path {
