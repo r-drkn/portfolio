@@ -57,19 +57,7 @@ header {
   z-index: 2;
   background-color: rgb(233, 233, 233);
 }
-#menu {
-  transform: rotateX(0deg);
-  transition: transform 0.35s ease-in;
-  z-index: 3;
-  position: fixed;
-  top: 0;
-  right: 0;
-  &.menu-flip {
-    transform: rotateX(180deg);
-    transition: transform 0.7s ease-in;
-    letter-spacing: -4px;
-  }
-}
+
 .info {
   font-family: "Syne Regular";
   font-size: 54px;
@@ -319,11 +307,24 @@ header {
     }
   }
 }
-
+#menu {
+  transform: rotateX(0deg);
+  transition: transform 0.35s ease-in;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  right: 0;
+  &.menu-flip {
+    transform: rotateX(180deg);
+    transition: transform 0.7s ease-in;
+    letter-spacing: -4px;
+  }
+}
 .nav {
   grid-column: 1 / -1;
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 2;
   .nav-items {
     background: $secondary-color;
@@ -354,9 +355,8 @@ header {
       height: 100%;
     }
     &.open {
-      transform: translate3d(0vw, 0vh, 0);
+      transform: translate3d(0, 0, 0);
       transition: transform 0.5s ease-in;
-      width: 100%;
       li {
         font-size: 2rem;
         opacity: 0;
@@ -385,7 +385,7 @@ header {
       letter-spacing: 5px;
       text-transform: bodycase;
       text-decoration: none;
-      color: whitesmoke;
+      color: $white-color;
     }
   }
 }
