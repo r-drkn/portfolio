@@ -54,10 +54,14 @@ body {
       grid-template-areas: "body-section body-section body-section";
 }
 
+.grid-container.noscroll {
+  overflow-y: hidden;
+}
+
 #menu {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   margin: 0;
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
@@ -387,7 +391,6 @@ nav {
   grid-row: 1 / span 4;
   grid-column: 1 / -1;
   position: relative;
-  height: 100vh;
 }
 
 nav .nav-items {
@@ -408,28 +411,26 @@ nav .nav-items {
   width: 100%;
   height: 100vh;
   position: absolute;
-  -webkit-transform: translate3d(100vw, 0, 0);
-          transform: translate3d(100vw, 0, 0);
+  -webkit-transform: translate3d(100vw, -200vw, 0);
+          transform: translate3d(100vw, -200vw, 0);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  border-top-left-radius: 4rem;
-  -ms-flex-item-align: end;
-      align-self: end;
+  border-bottom-left-radius: 4rem;
   -webkit-animation: zindex 1s forwards;
           animation: zindex 1s forwards;
 }
 
 @-webkit-keyframes zindex {
   100% {
-    z-index: 1;
+    z-index: 2;
   }
 }
 
 @keyframes zindex {
   100% {
-    z-index: 1;
+    z-index: 2;
   }
 }
 
@@ -447,7 +448,6 @@ nav .nav-items ul {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  margin-bottom: 20vh;
 }
 
 nav .nav-items.open {
@@ -461,6 +461,7 @@ nav .nav-items.open {
 }
 
 nav .nav-items.open li {
+  font-size: 2rem;
   opacity: 0;
   -webkit-animation: menu-fade 1s forwards;
           animation: menu-fade 1s forwards;
@@ -503,7 +504,7 @@ nav .nav-items a {
   letter-spacing: 5px;
   text-transform: bodycase;
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
 }
 
 .body-section {
@@ -542,19 +543,17 @@ nav .nav-items a {
   padding: 10px;
 }
 
-footer {
+header {
   height: 48px;
   width: 100%;
   z-index: 2;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  border-top-left-radius: 10px;
-  background-color: #FF7E78;
+  top: 0;
+  right: 0;
   padding-bottom: calc(env(safe-area-inset-bottom));
 }
 
-footer .info-bar {
+.info-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -572,10 +571,14 @@ footer .info-bar {
   z-index: 2;
   line-height: -32px;
   height: 100%;
-  padding-right: 10px;
+  padding-right: 40px;
 }
 
-footer .info-bar .info-icons :active {
+.info-bar .info-icons {
+  margin-left: 1rem;
+}
+
+.info-bar .info-icons :active {
   opacity: 0.4;
 }
 
