@@ -40,13 +40,9 @@ body {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
-  display: grid;
-  grid-template: 60px 1fr / auto auto auto;
   -webkit-overflow-scrolling: touch;
-  &.noscroll{
-    overflow-y: hidden;
-  }
 }
+
 header {
   position: fixed;
   width: 100%;
@@ -76,12 +72,6 @@ header {
 
 .blog {
   background-color: $white-color;
-  .blog-title {
-    line-height: 36px;
-    right: -43px;
-    bottom: 44px;
-    letter-spacing: -3px;
-  }
 }
 .blog-landing {
   height: 60vh;
@@ -223,12 +213,6 @@ header {
       }
     }
   }
-  .contact-title {
-    line-height: 30px;
-    right: -84px;
-    bottom: 90px;
-    letter-spacing: -4px;
-}
 }
 
 .work {
@@ -275,14 +259,13 @@ header {
       }
     }
   }
-  .work-title {
-    line-height: 30px;
-    right: -48px;
-    bottom: 58px;
-    letter-spacing: -5px;
+}
+.landing-body{
+  background-color: $primary-color;
+  .landing-header{
+    background-color: $primary-color;
   }
 }
-
 .landing-intro-container {
   position: absolute;
   display: flex;
@@ -293,7 +276,7 @@ header {
   height: 250px;
   z-index: 1;
   .landing-intro-text {
-    color: black;
+    color: #7E806F;
     font-family: "Syne Regular";
     font-style: normal;
     font-weight: normal;
@@ -330,11 +313,31 @@ header {
   }
   }
 }
+
+//Titles Positioning
 .about-title{
-  right: -64px;
+  right: -54px;
   bottom: 70px;
   line-height: 30px;
   letter-spacing: -1px;
+}
+.blog-title {
+  line-height: 36px;
+  right: -33px;
+  bottom: 44px;
+  letter-spacing: -3px;
+}
+.work-title {
+  line-height: 30px;
+  right: -42px;
+  bottom: 58px;
+  letter-spacing: -5px;
+}
+.contact-title {
+  line-height: 30px;
+  right: -76px;
+  bottom: 90px;
+  letter-spacing: -4px;
 }
 #menu {
   transform: rotateX(0deg);
@@ -342,7 +345,7 @@ header {
   z-index: 3;
   position: fixed;
   top: 0;
-  right: 0;
+  right: 12px;
   &.menu-flip {
     transform: rotateX(180deg);
     transition: transform 0.7s ease-in;
@@ -353,11 +356,11 @@ header {
 
 
 .nav {
-  grid-column: 1 / -1;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 2;
+  padding-bottom: calc(env(safe-area-inset-bottom));
   .nav-items {
     background: $secondary-color;
     display: flex;
@@ -370,7 +373,6 @@ header {
     transform: translate3d(100vw, -100vh, 0);
     transition: transform 0.3s ease-out;
     border-bottom-left-radius: 4rem;
-    padding-bottom: calc(env(safe-area-inset-bottom));
     ul {
       list-style: none;
       text-align: center;
@@ -450,29 +452,27 @@ footer {
   bottom: 0;
   left: 0;
   padding-bottom: calc(env(safe-area-inset-bottom));
-}
-.info-bar {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: center;
-  // transform: translateX(300px);
-  // transition: transform 0.2s ease-out;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  line-height: -32px;
-  .info-icons {
-    margin-top: 1rem;
-    :active {
-      opacity: 0.4;
+  .info-bar {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    // transform: translateX(300px);
+    // transition: transform 0.2s ease-out;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    line-height: -32px;
+    .info-icons {
+      margin-top: 1rem;
+      :active {
+        opacity: 0.4;
+      }
     }
   }
 }
+
 .info-open {
-  transform: translateX(0);
-  transition: transform 0.2s ease-in;
-  margin-bottom: 20px;
   .info-icons {
     opacity: 0;
     animation: menu-fade 1s forwards;
