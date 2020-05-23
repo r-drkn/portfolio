@@ -70,7 +70,7 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  z-index: 1;
+  z-index: 2;
   background-color: #e9e9e9;
 }
 
@@ -232,13 +232,22 @@ header {
 
 .contact .contact-container {
   height: 100%;
-  font-family: "Young Serif", serif;
+  padding: 1rem;
+  font-family: "Syne Regular", sans-serif;
+}
+
+.contact .contact-container .contact-intro {
+  margin-bottom: 1rem;
+}
+
+.contact .contact-container .contact-intro p {
+  font-size: 1.5rem;
 }
 
 .contact .contact-container .contact-form {
   border-radius: 5%;
-  height: 50vh;
   width: 100%;
+  height: auto;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -247,51 +256,70 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .contact .contact-container .contact-form .form-item {
-  margin: 2vh;
+  padding: 10px;
+  margin: 5px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
-  border: 1px solid black;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  border-radius: 1%;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: rgba(255, 127, 120, 0.301);
+  -webkit-box-shadow: 2px 2px 5px #FF7E78;
+          box-shadow: 2px 2px 5px #FF7E78;
 }
 
 .contact .contact-container .contact-form .form-item input {
   background-color: rgba(51, 51, 51, 0);
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 1rem;
   border: none;
-  width: 100%;
 }
 
-.contact .contact-container label {
+.contact .contact-container .contact-form .form-item .message-label {
   display: block;
 }
 
-.contact .contact-container button {
-  padding: 10px 20px;
-  margin: 10px;
-}
-
-.contact .contact-container textarea {
-  width: 100%;
+.contact .contact-container .contact-form .form-item textarea {
+  display: block;
+  margin-left: 8px;
   background-color: rgba(51, 51, 51, 0);
+  border: 1px solid black;
+  font-size: 14px;
+  font-family: "Syne Regular", sans-serif;
   border: none;
 }
 
-.contact .contact-container p {
-  font-family: "Syne Regular", sans-serif;
-  font-size: 0.75rem;
+.contact .contact-container .contact-form .send-button {
+  padding: 5px 20px;
+  margin: 10px;
+  background-color: rgba(171, 216, 255, 0.616);
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px rgba(171, 216, 255, 0.37);
+          box-shadow: 2px 2px 5px rgba(171, 216, 255, 0.37);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .contact .contact-title {
@@ -399,16 +427,17 @@ header {
   }
 }
 
-nav {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
+.nav {
   grid-column: 1 / -1;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
-nav .nav-items {
+.nav .nav-items {
   background: #FF7E78;
+  opacity: 0.95;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -423,10 +452,10 @@ nav .nav-items {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 80vh;
+  height: calc(100vh - (env(safe-area-inset-bottom)));
   position: absolute;
-  -webkit-transform: translate3d(100vw, -200vw, 0);
-          transform: translate3d(100vw, -200vw, 0);
+  -webkit-transform: translate3d(100vw, -100vh, 0);
+          transform: translate3d(100vw, -100vh, 0);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
@@ -449,7 +478,7 @@ nav .nav-items {
   }
 }
 
-nav .nav-items ul {
+.nav .nav-items ul {
   list-style: none;
   text-align: center;
   display: -webkit-box;
@@ -465,9 +494,9 @@ nav .nav-items ul {
   height: 100%;
 }
 
-nav .nav-items.open {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+.nav .nav-items.open {
+  -webkit-transform: translate3d(0vw, 0vh, 0);
+          transform: translate3d(0vw, 0vh, 0);
   -webkit-transition: -webkit-transform 0.5s ease-in;
   transition: -webkit-transform 0.5s ease-in;
   transition: transform 0.5s ease-in;
@@ -475,31 +504,31 @@ nav .nav-items.open {
   width: 100%;
 }
 
-nav .nav-items.open li {
+.nav .nav-items.open li {
   font-size: 2rem;
   opacity: 0;
   -webkit-animation: menu-fade 1s forwards;
           animation: menu-fade 1s forwards;
 }
 
-nav .nav-items.open li:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+.nav .nav-items.open li:nth-child(1) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
-nav .nav-items.open li:nth-child(3) {
+.nav .nav-items.open li:nth-child(2) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 
-nav .nav-items.open li:nth-child(2) {
-  -webkit-animation-delay: 0.65s;
-          animation-delay: 0.65s;
+.nav .nav-items.open li:nth-child(3) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
-nav .nav-items.open li:nth-child(1) {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+.nav .nav-items.open li:nth-child(4) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 @-webkit-keyframes menu-fade {
@@ -514,7 +543,7 @@ nav .nav-items.open li:nth-child(1) {
   }
 }
 
-nav .nav-items a {
+.nav .nav-items a {
   font-family: "Syne Regular", sans-serif;
   letter-spacing: 5px;
   text-transform: bodycase;

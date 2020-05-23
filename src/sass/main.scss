@@ -54,7 +54,7 @@ header {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  z-index: 1;
+  z-index: 2;
   background-color: rgb(233, 233, 233);
 }
 #menu {
@@ -162,46 +162,65 @@ header {
   background-color: rgb(233, 233, 233);
   .contact-container {
     height: 100%;
-    font-family: $header-text;
+    padding: 1rem;
+    font-family: $header-pair;
+    .contact-intro {
+      margin-bottom: 1rem;
+      p{
+        font-size: 1.5rem;
+      }
+    }
     .contact-form {
-      // box-shadow: 0 0 10px 0 rgba(241, 168, 235, 0.7);
+      // box-shadow: 5px 5px 3px 1px $primary-color;
       border-radius: 5%;
-      height: 50vh;
       width: 100%;
+      height: auto;
       padding: 1rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-evenly;
+      align-items: flex-start;
       .form-item {
-        margin: 2vh;
+        padding: 10px;
+        margin: 5px 0px;
         display: flex;
+        flex-direction:row;
+        justify-content: flex-start;
+        align-items: flex-start;
         width: 100%;
-        border: 1px solid black;
-        justify-content: space-between;
-        border-radius: 1%;
+        font-size: 1rem;
+        border-radius: 5px;
+        background-color: rgba(255, 127, 120, 0.301);
+        box-shadow: 2px 2px 5px $secondary-color;
         input {
           background-color: rgba(51, 51, 51, 0);
+          margin-left: 8px;
+          margin-right: 8px;
+          font-size: 1rem;
           border: none;
-          width: 100%;
+        }
+        .message-label{
+          display: block;
+        }
+        textarea {
+          display: block;
+          margin-left: 8px;
+          background-color: rgba(51, 51, 51, 0);
+          border: 1px solid black;
+          font-size: 14px;
+          font-family: $header-pair;
+          border: none;
         }
       }
-    }
-    label {
-      display: block;
-    }
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-    }
-    textarea {
-      width: 100%;
-      background-color: rgba(51, 51, 51, 0);
-      border: none;
-    }
-    p {
-      font-family: $header-pair;
-      font-size: 0.75rem;
+      .send-button {
+        padding: 5px 20px;
+        margin: 10px;
+        background-color: rgba(171, 216, 255, 0.616);
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(171, 216, 255, 0.37);
+        align-self: flex-end;
+      }
     }
   }
   .contact-title {
@@ -209,7 +228,7 @@ header {
     right: -84px;
     bottom: 90px;
     letter-spacing: -4px;
-  }
+}
 }
 
 .work {
@@ -276,20 +295,22 @@ header {
   }
 }
 
-nav {
-  grid-row: 1 / 2;
+.nav {
   grid-column: 1 / -1;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   .nav-items {
     background: $secondary-color;
+    opacity: 0.95;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 80vh;
+    height: calc(100vh - (env(safe-area-inset-bottom));
     position: absolute;
-    transform: translate3d(100vw, -200vw, 0);
+    transform: translate3d(100vw, -100vh, 0);
     transition: transform 0.3s ease-out;
     border-bottom-left-radius: 4rem;
     margin-bottom: calc(env(safe-area-inset-bottom));
@@ -309,24 +330,24 @@ nav {
       height: 100%;
     }
     &.open {
-      transform: translate3d(0, 0, 0);
+      transform: translate3d(0vw, 0vh, 0);
       transition: transform 0.5s ease-in;
       width: 100%;
       li {
         font-size: 2rem;
         opacity: 0;
         animation: menu-fade 1s forwards;
-        &:nth-child(4) {
-          animation-delay: 0.3s;
-        }
-        &:nth-child(3) {
-          animation-delay: 0.5s;
+        &:nth-child(1) {
+          animation-delay: 0.4s;
         }
         &:nth-child(2) {
-          animation-delay: 0.65s;
+          animation-delay: 0.5s;
         }
-        &:nth-child(1) {
-          animation-delay: 0.8s;
+        &:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+        &:nth-child(4) {
+          animation-delay: 0.7s;
         }
         @keyframes menu-fade {
           100% {
