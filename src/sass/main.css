@@ -57,10 +57,10 @@ body {
 }
 
 header {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-  grid-column: 1 / -1;
+  position: fixed;
+  border: 2px solid red;
+  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
