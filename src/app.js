@@ -57,7 +57,7 @@ navSlide();
   
   
 
-}
+// }
 
 navSlide();
 
