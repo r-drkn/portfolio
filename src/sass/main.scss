@@ -18,15 +18,15 @@
   font-family: "Young Serif";
   src: url("../YoungSerif-Regular.woff") format("woff");
 }
-@mixin text-base{
+@mixin text-base {
   color: black;
-      font-family: "Syne Regular";
-      font-style: normal;
-      font-weight: normal;
-      font-size: 36px;
-      letter-spacing: 0.05vw;
+  font-family: "Syne Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  letter-spacing: 0.05vw;
 }
-@mixin text-second{
+@mixin text-second {
   color: black;
   font-family: franklin-gothic-urw-comp, sans-serif;
   font-weight: 200;
@@ -34,23 +34,23 @@
   font-style: normal;
 }
 
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 html {
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+
 }
 
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   height: 100%;
+  width: 100%;
   background-color: $white-color;
   overscroll-behavior: none;
 }
@@ -83,12 +83,12 @@ header {
   cursor: default;
 }
 
-.blog-container{
+.blog-container {
   display: grid;
   grid-template-columns: repeat(8, 12.5vw);
   grid-template-rows: repeat(16, 12.5vh);
   height: 100%;
-  overflow-y: auto;
+  overflow-y: visible;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
 }
@@ -162,7 +162,7 @@ header {
     grid-template-columns: repeat(8, 12.5vw);
     grid-template-rows: repeat(8, 12.5vh);
     height: 100%;
-    overflow-y: hidden;
+    overflow-y: visible;
     overflow-x: hidden;
     height: 100%;
     font-family: $header-pair;
@@ -215,30 +215,32 @@ header {
       }
     }
   }
-    p {
-      text-align: center;
-      font-size: 1rem;
-    }
-    .contact-socials {
-      margin-top: 20px;
-    }
-    #socials-arrow {
-      margin-right: 120px;
-      height: 100px;
-    }
-    .contact-intro {
-      margin-bottom: 1rem;
-    }
-    
+  p {
+    text-align: center;
+    font-size: 1rem;
+  }
+  .contact-socials {
+    margin-top: 20px;
+  }
+  #socials-arrow {
+    margin-right: 120px;
+    height: 100px;
+  }
+  .contact-intro {
+    margin-bottom: 1rem;
+  }
 }
-
 
 //Work
 .work {
-  background-color: $white-color;
+  .work-container{
+    display: grid;
+    grid-template-columns: repeat(8, 12.5vw);
+    grid-template-rows: repeat(8, 12.5vh);
   .work-carousel {
+    grid-row: 2 / 8;
+    grid-column: 2 / 8;
     display: flex;
-    overflow-x: auto;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     height: 100%;
@@ -256,8 +258,6 @@ header {
       flex-shrink: 0;
       height: 100%;
       width: 100%;
-      padding: 1.5rem;
-      padding-top: 0;
       .work-header-container {
         display: flex;
         align-items: center;
@@ -279,6 +279,7 @@ header {
     }
   }
 }
+}
 
 //Landing/Home
 .landing-body {
@@ -292,7 +293,7 @@ header {
   grid-template-columns: repeat(8, 12.5vw);
   grid-template-rows: repeat(16, 12.5vh);
   height: 100%;
-  overflow-y: auto;
+  overflow-y: visible;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   .landing-intro-container {
@@ -301,7 +302,6 @@ header {
     display: grid;
     grid-template-columns: repeat(8, 12.5vw);
     grid-template-rows: repeat(8, 12.5vh);
-    overflow-y: hidden;
     scroll-snap-align: center;
     .landing-intro {
       grid-row: 3 / 6;
@@ -310,35 +310,35 @@ header {
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-    .landing-intro-text {
-      //create mixin
-      color: black;
-      font-family: "Syne Regular";
-      font-style: normal;
-      font-weight: normal;
-      font-size: 13.3vw;
-      line-height: 0px;
-      letter-spacing: 0.05vw;
-      animation: linestack 1.5s forwards;
-      z-index: 1;
-      @keyframes linestack {
-        25% {
-          line-height: 0px;
-        }
-        100% {
-          line-height: 44px;
+      .landing-intro-text {
+        //create mixin
+        color: black;
+        font-family: "Syne Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13.3vw;
+        line-height: 0px;
+        letter-spacing: 0.05vw;
+        animation: linestack 1.5s forwards;
+        z-index: 1;
+        @keyframes linestack {
+          25% {
+            line-height: 0px;
+          }
+          100% {
+            line-height: 44px;
+          }
         }
       }
-    }
-    .landing-intro-fade {
-      color: black;
-      font-family: "Syne Regular";
-      font-style: normal;
-      font-weight: normal;
-      font-size: 13.3vw;
-      line-height: 0px;
-      letter-spacing: 0.05vw;
-    }
+      .landing-intro-fade {
+        color: black;
+        font-family: "Syne Regular";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13.3vw;
+        line-height: 0px;
+        letter-spacing: 0.05vw;
+      }
     }
     .scroll-cue {
       grid-row: 7 / 9;
@@ -358,9 +358,19 @@ header {
       }
     }
     .landing-animation {
-      grid-column: 2 / -1;
-      grid-row: 1 / 8;
-      svg {
+      grid-column: 2 / 9;
+      grid-row: 1 / -1;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 4%;
+      vertical-align: middle;
+      overflow: hidden;
+      .landing-svg {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
         .path {
           stroke-dashoffset: 2100;
           stroke-dasharray: 2100;
@@ -378,46 +388,44 @@ header {
     scroll-snap-align: center;
     grid-row: 9 / -1;
     grid-column: 1 / -1;
-    height: 100%;
-    width: 100%;
     display: grid;
     grid-template: repeat(10, 10vh) / repeat(8, 12.5vw);
-    .about-mobile{
+    .about-mobile {
       grid-column: 2 / -2;
       grid-row: 2 / 10;
-      display:flex;
+      display: flex;
       flex-direction: column;
       padding: 1rem;
-      .about-boxes{
-      padding-bottom: 1rem;
-      display:flex;
-      flex-direction: row;
-      justify-content: space-between;
-      border-bottom: 2px solid black;
-      margin-bottom: 8px;
+      .about-boxes {
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 2px solid black;
+        margin-bottom: 8px;
       }
-      .about-interests{
+      .about-interests {
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
         align-items: flex-end;
       }
-      .about-answers{
-        color: #7E806F;
+      .about-answers {
+        color: #7e806f;
         align-self: flex-end;
       }
-      .about-labels{
+      .about-labels {
         color: black;
         font-size: 18px;
         font-weight: 500;
       }
-      h3{
+      h3 {
         @include text-base;
         font-size: 24px;
       }
-      .about-write-up{
+      .about-write-up {
         font-size: 16px;
-        color: #7E806F;
+        color: #7e806f;
         text-align: center;
         border-bottom: none;
       }
@@ -425,13 +433,11 @@ header {
   }
 }
 
-
-
 //Titles Positioning
 .about-title {
   grid-row: 10 / 11;
   grid-column: 8 / 9;
-  right: -12px;
+  right: -20px;
   bottom: -10px;
   line-height: 30px;
   letter-spacing: -1px;
@@ -489,7 +495,6 @@ header {
     position: absolute;
     transform: translateY(-100vh);
     transition: transform 0.3s ease-out;
-    box-shadow: inset 0px 5px 15px $white-color;
     ul {
       list-style: none;
       text-align: center;
@@ -529,6 +534,9 @@ header {
       text-transform: bodycase;
       text-decoration: none;
       color: $white-color;
+      :active {
+        opacity: 0.4;
+      }
     }
   }
 }
@@ -561,20 +569,19 @@ header {
 }
 
 footer {
+  grid-row: 8 /9;
+  grid-column: 1 / -1;
   height: 100%;
   width: 44px;
   z-index: 1;
   position: fixed;
   bottom: 0;
   left: 0;
-  padding-bottom: calc(env(safe-area-inset-bottom));
   .info-bar {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
     align-items: center;
-    // transform: translateX(300px);
-    // transition: transform 0.2s ease-out;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -588,59 +595,20 @@ footer {
   }
 }
 
-.info-open {
-  .info-icons {
-    opacity: 0;
-    animation: menu-fade 1s forwards;
-    &:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-    &:nth-child(2) {
-      animation-delay: 0.5s;
-    }
-    &:nth-child(3) {
-      animation-delay: 0.7s;
-    }
-    @keyframes menu-fade {
-      100% {
-        opacity: 1;
-      }
-    }
-  }
-}
 
 // Screen Sizes 500px and Up
 
 @media (min-width: 500px) {
-  .grid-container {
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100%;
-    display: grid;
-    grid-template: 10vh auto 118px / 1fr 3fr 1fr;
-    grid-template-areas:
-      "header header header"
-      "body-section body-section body-section"
-      "footer footer footer";
-  }
   #menu {
-    grid-area: header;
-    top: 0;
     display: none;
-    &:hover {
-      cursor: pointer;
-    }
   }
   .nav {
-    grid-area: header;
     .nav-items {
       background-color: rgba(51, 51, 51, 0);
       flex-direction: row;
       justify-content: space-between;
       display: flex;
       flex-wrap: wrap;
-      width: 100%;
       justify-content: flex-end;
       transform: translate3d(0, -100px, 0);
       transition: transform 0.3s ease-out;
@@ -667,16 +635,12 @@ footer {
       }
     }
   }
-  .body-section {
-    grid-template-columns: 8vw 10fr 8vw;
-    grid-template-rows: auto auto 1fr;
-  }
   .landing-container {
     display: grid;
     grid-template-columns: repeat(8, 12.5vw);
     grid-template-rows: repeat(16, 12.5vh);
-    overflow-y: auto;
     border: 3px solid blue;
+    overflow: visible;
     .landing-intro {
       .landing-intro-text {
         color: black;
@@ -702,42 +666,15 @@ footer {
       text-decoration: none;
       @include text-base;
       border-bottom: 2px solid black;
+      text-align: center;
     }
+  }
+  .blog-container{
+    display: grid;
+    overflow: visible;
   }
 }
 // Screen Sizes 700px and Up
 
 @media (min-width: 700px) {
 }
-
-// btn {
-//     padding: 0.5rem 2rem;
-//     border: 1px #ccc solid;
-//     display: inline-block;
-//     margin: 2rem 0 0;
-//     border-radius: 50px;
-//     text-decoration: none;
-//     color: #333;
-//     transition: background 300ms ease;
-// }
-
-// Animate smooth scroll
-
-// .nav-links a {
-//     transform: translate3d(400px, 0, 0);
-//     transition: transform 0.6s ease;
-// &.open {
-//     transform: translate3d(0, 0, 0);
-// }
-// }
-// @for $i from 1 through 4 {
-//     nav-links a:nth-child(#{$i}) {
-//         transition-delay: $i * 0.2s;
-//     }
-// }
-//   :nth-child(odd){
-//     border: 2px solid red;
-// }
-// :nth-child(even){
-//     border: 2px solid red;
-// }

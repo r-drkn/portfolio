@@ -22,16 +22,6 @@ const navSlide = () => {
 
 navSlide();
 
-const footerSlide = () => {
-  const icon = document.querySelector(".info");
-  const bar = document.querySelector(".info-bar");
-
-  icon.addEventListener("click", () => {
-    bar.classList.toggle("info-open");
-  });
-};
-
-footerSlide();
 
 // TweenMax.to('#cactus-1', 1, {
 //     attr: {
