@@ -498,8 +498,8 @@ header {
 }
 
 .nav #menu {
-  -webkit-transform: rotateX(0deg);
-          transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg) translateZ(0);
+          transform: rotateX(0deg) translateZ(0);
   -webkit-transition: -webkit-transform 0.175s ease-in;
   transition: -webkit-transform 0.175s ease-in;
   transition: transform 0.175s ease-in;
@@ -508,20 +508,16 @@ header {
   position: fixed;
   top: 0;
   right: 12px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }
 
 .nav #menu.menu-flip {
-  -webkit-transform: rotateX(-180deg);
-          transform: rotateX(-180deg);
+  -webkit-transform: rotateX(-180deg) translateZ(0);
+          transform: rotateX(-180deg) translateZ(0);
   -webkit-transition: -webkit-transform 0.35s ease-in;
   transition: -webkit-transform 0.35s ease-in;
   transition: transform 0.35s ease-in;
   transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
   z-index: 3;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }
 
 .nav .nav-items {
