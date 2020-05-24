@@ -575,41 +575,6 @@ header {
 
 .nav .nav-items.open li {
   font-size: 2rem;
-  opacity: 0;
-  -webkit-animation: menu-fade 1s forwards;
-          animation: menu-fade 1s forwards;
-}
-
-.nav .nav-items.open li:nth-child(1) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-
-.nav .nav-items.open li:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-
-.nav .nav-items.open li:nth-child(3) {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
-}
-
-.nav .nav-items.open li:nth-child(4) {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
-}
-
-@-webkit-keyframes menu-fade {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes menu-fade {
-  100% {
-    opacity: 1;
-  }
 }
 
 .nav .nav-items a {
@@ -713,6 +678,12 @@ footer .info-bar .info-icons :active {
 .info-open .info-icons:nth-child(3) {
   -webkit-animation-delay: 0.7s;
           animation-delay: 0.7s;
+}
+
+@-webkit-keyframes menu-fade {
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes menu-fade {
