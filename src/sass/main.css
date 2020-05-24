@@ -37,12 +37,13 @@ body {
   overflow-x: hidden;
   height: 100%;
   background-color: #F8FF91;
-  overscroll-behavior-y: none;
+  overscroll-behavior: none;
 }
 
 .grid-container {
   position: relative;
   overflow-x: hidden;
+  overscroll-behavior: none;
   width: 100vw;
   height: 100vh;
 }
@@ -521,6 +522,7 @@ header {
 }
 
 .nav .nav-items {
+  z-index: 2;
   background: #FF7E78;
   display: -webkit-box;
   display: -ms-flexbox;

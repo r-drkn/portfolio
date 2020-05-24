@@ -33,11 +33,12 @@ body {
   overflow-x: hidden;
   height: 100%;
   background-color: $primary-color;
-  overscroll-behavior-y: none;
+  overscroll-behavior: none;
 }
 .grid-container {
   position: relative;
   overflow-x: hidden;
+  overscroll-behavior: none;
   width: 100vw;
   height: 100vh;
 }
@@ -361,6 +362,7 @@ header {
   z-index: 2;
   padding-bottom: calc(env(safe-area-inset-bottom));
   .nav-items {
+    z-index: 2;
     background: $secondary-color;
     display: flex;
     justify-content: space-evenly;
