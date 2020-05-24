@@ -370,7 +370,7 @@ header {
     width: 100%;
     height: calc(100vh - (env(safe-area-inset-bottom)));
     position: absolute;
-    transform: translate3d(0, -100vh, 0);
+    transform: translateY(-100vh);
     transition: transform 0.3s ease-out;
     border-bottom-left-radius: 4rem;
     ul {
@@ -382,7 +382,7 @@ header {
       height: 100%;
     }
     &.open {
-      transform: translate3d(0, 0, 0);
+      transform: translateY(0);
       transition: transform 0.35s ease-in;
       li {
         font-size: 2rem;
