@@ -502,8 +502,8 @@ header {
 }
 
 #menu.menu-flip {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
   -webkit-transition: -webkit-transform 0.7s ease-in;
   transition: -webkit-transform 0.7s ease-in;
   transition: transform 0.7s ease-in;

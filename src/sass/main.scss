@@ -347,7 +347,7 @@ header {
   top: 0;
   right: 12px;
   &.menu-flip {
-    transform: rotateX(180deg);
+    transform: rotateX(-180deg);
     transition: transform 0.7s ease-in;
     letter-spacing: -4px;
     z-index: 3;
