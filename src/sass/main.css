@@ -508,6 +508,8 @@ header {
   position: fixed;
   top: 0;
   right: 12px;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
 .nav #menu.menu-flip {
@@ -518,6 +520,8 @@ header {
   transition: transform 0.35s ease-in;
   transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
   z-index: 3;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
 .nav .nav-items {

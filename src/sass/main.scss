@@ -354,10 +354,12 @@ header {
     position: fixed;
     top: 0;
     right: 12px;
+    transform: translateZ(0);
     &.menu-flip {
       transform: rotateX(-180deg);
       transition: transform 0.35s ease-in;
       z-index: 3;
+      transform: translateZ(0);
     }
   }
   .nav-items {
