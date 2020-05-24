@@ -1,59 +1,61 @@
 
+const navSlide = () => {
+  const menu = document.querySelector("#menu");
+  const nav = document.querySelector(".nav-items");
+  let clicks = 0;
+  
+  menu.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    if (clicks === 0){
+      const flip = () => {(menu.classList.add('menu-flip'))}; 
+      const open = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/close.svg')};
+      setTimeout(open, 575);
+      setTimeout(flip, 350);
+      clicks++;
+    } else {
+      const flipback = () => {(menu.classList.remove("menu-flip"))};
+      const close = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg')};
+      setTimeout(close, 425);
+      setTimeout(flipback, 300);
+      clicks--;
+    }
+  })
+  
+
+}
+
+navSlide();
+
+
 // const navSlide = () => {
 //   const menu = document.querySelector("#menu");
 //   const nav = document.querySelector(".nav-items");
+//   let otherclicks = 0;
 //   let clicks = 0;
   
+  
+//   menu.addEventListener("click", () => {
+//     if (otherclicks === 0){
+//       menu.classList.add('menu-flip'); 
+//       otherclicks++;
+//     } else {
+//       menu.classList.remove("menu-flip");
+//       otherclicks--;
+//     }
+//   })
+
 //   menu.addEventListener("click", () => {
 //     nav.classList.toggle("open");
-//     if (clicks === 0){
-//       menu.classList.add('menu-flip'); 
+//     if (clicks === 0){ 
 //       const open = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/close.svg')};
 //       setTimeout(open, 225);
 //       clicks++;
 //     } else {
-//       menu.classList.remove("menu-flip");
 //       const close = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg')};
 //       setTimeout(close, 125);
 //       clicks--;
 //     }
 //   })
-  
-
-// }
-
-// navSlide();
-
-
-const navSlide = () => {
-  const menu = document.querySelector("#menu");
-  const nav = document.querySelector(".nav-items");
-  let otherclicks = 0;
-  let clicks = 0;
-  
-  
-  menu.addEventListener("click", () => {
-    if (otherclicks === 0){
-      menu.classList.add('menu-flip'); 
-      otherclicks++;
-    } else {
-      menu.classList.remove("menu-flip");
-      otherclicks--;
-    }
-  })
-
-  menu.addEventListener("click", () => {
-    nav.classList.toggle("open");
-    if (clicks === 0){ 
-      const open = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/close.svg')};
-      setTimeout(open, 225);
-      clicks++;
-    } else {
-      const close = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg')};
-      setTimeout(close, 125);
-      clicks--;
-    }
-  })
   
   
 
