@@ -339,11 +339,11 @@ header {
   bottom: 90px;
   letter-spacing: -4px;
 }
-#menu {
+.menu {
   transform: rotateX(0deg);
   transition: transform 0.175s ease-in;
   z-index: 3;
-  position: sticky;
+  position: fixed;
   top: 0;
   right: 12px;
   &.menu-flip {

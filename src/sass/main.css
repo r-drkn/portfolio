@@ -488,7 +488,7 @@ header {
   letter-spacing: -4px;
 }
 
-#menu {
+.menu {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
   -webkit-transition: -webkit-transform 0.175s ease-in;
@@ -496,13 +496,12 @@ header {
   transition: transform 0.175s ease-in;
   transition: transform 0.175s ease-in, -webkit-transform 0.175s ease-in;
   z-index: 3;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   right: 12px;
 }
 
-#menu.menu-flip {
+.menu.menu-flip {
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
   -webkit-transition: -webkit-transform 0.35s ease-in;
