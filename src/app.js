@@ -9,12 +9,12 @@ const navSlide = () => {
     if (clicks === 0){
       menu.classList.toggle('menu-flip'); 
       const open = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/close.svg')};
-      setTimeout(open, 450);
+      setTimeout(open, 225);
       clicks++;
     } else {
       menu.classList.toggle("menu-flip");
       const close = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg')};
-      setTimeout(close, 250);
+      setTimeout(close, 125);
       clicks--;
     }
   })

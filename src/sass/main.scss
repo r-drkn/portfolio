@@ -341,14 +341,14 @@ header {
 }
 #menu {
   transform: rotateX(0deg);
-  transition: transform 0.35s ease-in;
+  transition: transform 0.175s ease-in;
   z-index: 3;
   position: sticky;
   top: 0;
   right: 12px;
   &.menu-flip {
     transform: rotateX(-180deg);
-    transition: transform 0.7s ease-in;
+    transition: transform 0.35s ease-in;
     z-index: 3;
   }
 }

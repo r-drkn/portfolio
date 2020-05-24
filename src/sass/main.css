@@ -491,10 +491,10 @@ header {
 #menu {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
-  -webkit-transition: -webkit-transform 0.35s ease-in;
-  transition: -webkit-transform 0.35s ease-in;
-  transition: transform 0.35s ease-in;
-  transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
+  -webkit-transition: -webkit-transform 0.175s ease-in;
+  transition: -webkit-transform 0.175s ease-in;
+  transition: transform 0.175s ease-in;
+  transition: transform 0.175s ease-in, -webkit-transform 0.175s ease-in;
   z-index: 3;
   position: -webkit-sticky;
   position: sticky;
@@ -505,10 +505,10 @@ header {
 #menu.menu-flip {
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
-  -webkit-transition: -webkit-transform 0.7s ease-in;
-  transition: -webkit-transform 0.7s ease-in;
-  transition: transform 0.7s ease-in;
-  transition: transform 0.7s ease-in, -webkit-transform 0.7s ease-in;
+  -webkit-transition: -webkit-transform 0.35s ease-in;
+  transition: -webkit-transform 0.35s ease-in;
+  transition: transform 0.35s ease-in;
+  transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
   z-index: 3;
 }
 
