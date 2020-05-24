@@ -540,8 +540,8 @@ header {
   width: 100%;
   height: calc(100vh - (env(safe-area-inset-bottom)));
   position: absolute;
-  -webkit-transform: translate3d(100vw, -100vh, 0);
-          transform: translate3d(100vw, -100vh, 0);
+  -webkit-transform: translate3d(0, -100vh, 0);
+          transform: translate3d(0, -100vh, 0);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
