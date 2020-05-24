@@ -496,7 +496,8 @@ header {
   transition: transform 0.35s ease-in;
   transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
   z-index: 3;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   right: 12px;
 }
@@ -508,7 +509,6 @@ header {
   transition: -webkit-transform 0.7s ease-in;
   transition: transform 0.7s ease-in;
   transition: transform 0.7s ease-in, -webkit-transform 0.7s ease-in;
-  letter-spacing: -4px;
   z-index: 3;
 }
 

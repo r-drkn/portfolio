@@ -343,13 +343,12 @@ header {
   transform: rotateX(0deg);
   transition: transform 0.35s ease-in;
   z-index: 3;
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 12px;
   &.menu-flip {
     transform: rotateX(-180deg);
     transition: transform 0.7s ease-in;
-    letter-spacing: -4px;
     z-index: 3;
   }
 }
