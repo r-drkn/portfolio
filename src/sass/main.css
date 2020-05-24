@@ -498,8 +498,8 @@ header {
 }
 
 .nav #menu {
-  -webkit-transform: rotateX(0deg) translateZ(0);
-          transform: rotateX(0deg) translateZ(0);
+  -webkit-transform: translateZ(0) rotateX(0deg);
+          transform: translateZ(0) rotateX(0deg);
   -webkit-transition: -webkit-transform 0.175s ease-in;
   transition: -webkit-transform 0.175s ease-in;
   transition: transform 0.175s ease-in;
@@ -511,8 +511,8 @@ header {
 }
 
 .nav #menu.menu-flip {
-  -webkit-transform: rotateX(-180deg) translateZ(0);
-          transform: rotateX(-180deg) translateZ(0);
+  -webkit-transform: translateZ(0) rotateX(-180deg);
+          transform: translateZ(0) rotateX(-180deg);
   -webkit-transition: -webkit-transform 0.35s ease-in;
   transition: -webkit-transform 0.35s ease-in;
   transition: transform 0.35s ease-in;
