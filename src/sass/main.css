@@ -438,7 +438,7 @@ header {
 .landing-animation svg {
   position: absolute;
   right: 80px;
-  top: -24px;
+  top: -10px;
 }
 
 .landing-animation svg .path {
@@ -488,7 +488,16 @@ header {
   letter-spacing: -4px;
 }
 
-.menu {
+.nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding-bottom: calc(env(safe-area-inset-bottom));
+}
+
+.nav #menu {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
   -webkit-transition: -webkit-transform 0.175s ease-in;
@@ -501,7 +510,7 @@ header {
   right: 12px;
 }
 
-.menu.menu-flip {
+.nav #menu.menu-flip {
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
   -webkit-transition: -webkit-transform 0.35s ease-in;
@@ -509,15 +518,6 @@ header {
   transition: transform 0.35s ease-in;
   transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
   z-index: 3;
-}
-
-.nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  padding-bottom: calc(env(safe-area-inset-bottom));
 }
 
 .nav .nav-items {
@@ -567,10 +567,10 @@ header {
 .nav .nav-items.open {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  -webkit-transition: -webkit-transform 0.5s ease-in;
-  transition: -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in;
-  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  -webkit-transition: -webkit-transform 0.35s ease-in;
+  transition: -webkit-transform 0.35s ease-in;
+  transition: transform 0.35s ease-in;
+  transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
 }
 
 .nav .nav-items.open li {

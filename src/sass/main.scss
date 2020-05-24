@@ -300,7 +300,7 @@ header {
   svg{
     position: absolute;
     right: 80px;
-    top: -24px;
+    top: -10px;
   .path{
     stroke-dashoffset: 2100;
     stroke-dasharray: 2100;
@@ -339,19 +339,6 @@ header {
   bottom: 90px;
   letter-spacing: -4px;
 }
-.menu {
-  transform: rotateX(0deg);
-  transition: transform 0.175s ease-in;
-  z-index: 3;
-  position: fixed;
-  top: 0;
-  right: 12px;
-  &.menu-flip {
-    transform: rotateX(-180deg);
-    transition: transform 0.35s ease-in;
-    z-index: 3;
-  }
-}
 
 
 .nav {
@@ -360,6 +347,19 @@ header {
   left: 0;
   z-index: 2;
   padding-bottom: calc(env(safe-area-inset-bottom));
+  #menu {
+    transform: rotateX(0deg);
+    transition: transform 0.175s ease-in;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    right: 12px;
+    &.menu-flip {
+      transform: rotateX(-180deg);
+      transition: transform 0.35s ease-in;
+      z-index: 3;
+    }
+  }
   .nav-items {
     z-index: 2;
     background: $secondary-color;
@@ -383,7 +383,7 @@ header {
     }
     &.open {
       transform: translate3d(0, 0, 0);
-      transition: transform 0.5s ease-in;
+      transition: transform 0.35s ease-in;
       li {
         font-size: 2rem;
         opacity: 0;

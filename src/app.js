@@ -1,18 +1,18 @@
 
 const navSlide = () => {
-  const menu = document.querySelector(".menu");
+  const menu = document.querySelector("#menu");
   const nav = document.querySelector(".nav-items");
   let clicks = 0;
   
   menu.addEventListener("click", () => {
     nav.classList.toggle("open");
     if (clicks === 0){
-      menu.classList.toggle('menu-flip'); 
+      // menu.classList.toggle('menu-flip'); 
       const open = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/close.svg')};
       setTimeout(open, 225);
       clicks++;
     } else {
-      menu.classList.toggle("menu-flip");
+      // menu.classList.toggle("menu-flip");
       const close = () => {(menu.src = 'https://rdrkn-portfolio-bucket.s3-ap-southeast-2.amazonaws.com/MENU.svg')};
       setTimeout(close, 125);
       clicks--;
