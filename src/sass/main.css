@@ -41,11 +41,6 @@ body {
   width: 100%;
   background-color: #FDFFDE;
   overscroll-behavior: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 header {
@@ -208,14 +203,10 @@ header {
 .contact .contact-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (12.5vw)[8];
-      grid-template-columns: repeat(8, 12.5vw);
-  -ms-grid-rows: (12.5vh)[8];
-      grid-template-rows: repeat(8, 12.5vh);
-  height: 100%;
-  overflow-y: visible;
-  overflow-x: hidden;
-  height: 100%;
+  -ms-grid-columns: (12vw)[8];
+      grid-template-columns: repeat(8, 12vw);
+  -ms-grid-rows: (12vh)[8];
+      grid-template-rows: repeat(8, 12vh);
   font-family: "Syne Regular", sans-serif;
 }
 
@@ -333,19 +324,28 @@ header {
 }
 
 .contact .contact-socials {
-  margin-top: 20px;
-}
-
-.contact #socials-arrow {
+  margin-top: 2rem;
   -ms-grid-row: 7;
   -ms-grid-row-span: 1;
   grid-row: 7 / 8;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-column-span: 4;
-  grid-column: 2 / 6;
-  height: 15vh;
-  width: 40vw;
-  margin-left: 20px;
+  grid-column: 3 / 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border: 2px solid red;
+}
+
+.contact .contact-socials .info-icons {
+  height: 2rem;
 }
 
 .contact .contact-intro {
@@ -513,8 +513,8 @@ header {
   display: grid;
   -ms-grid-columns: (12.5vw)[8];
       grid-template-columns: repeat(8, 12.5vw);
-  -ms-grid-rows: (12.5vh)[8];
-      grid-template-rows: repeat(8, 12.5vh);
+  -ms-grid-rows: (calc(12.5vh - (env(safe-area-inset-bottom) / 8)))[8];
+      grid-template-rows: repeat(8, calc(12.5vh - (env(safe-area-inset-bottom) / 8)));
   scroll-snap-align: center;
 }
 
@@ -940,7 +940,7 @@ header {
 footer {
   -ms-grid-row: 8;
   -ms-grid-row-span: 1;
-  grid-row: 8 /9;
+  grid-row: 8 / 9;
   grid-column: 1 / -1;
   height: 100%;
   width: 44px;
@@ -1224,6 +1224,43 @@ footer .info-bar .info-icons :active {
   }
   .work .work-container .work-carousel .work-items .work-header-container .work-headers h3 {
     font-size: 5vw;
+  }
+  .contact .contact-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (12.5vw)[8];
+        grid-template-columns: repeat(8, 12.5vw);
+    -ms-grid-rows: (12.5vh)[8];
+        grid-template-rows: repeat(8, 12.5vh);
+  }
+  .contact .contact-container .contact-form {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    grid-row: 3 / 6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2 / 5;
+  }
+  .contact .contact-container .contact-intro {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2 / 5;
+  }
+  .contact .contact-container .email-cue {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 2;
+    grid-row: 6 / 8;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2 / 5;
+  }
+  .contact .contact-container .contact-socials {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2 / 5;
   }
   .about-title {
     font-size: 52px;

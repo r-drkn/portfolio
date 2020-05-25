@@ -52,8 +52,6 @@ body {
   width: 100%;
   background-color: $white-color;
   overscroll-behavior: none;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 header {
@@ -160,12 +158,8 @@ header {
 .contact {
   .contact-container {
     display: grid;
-    grid-template-columns: repeat(8, 12.5vw);
-    grid-template-rows: repeat(8, 12.5vh);
-    height: 100%;
-    overflow-y: visible;
-    overflow-x: hidden;
-    height: 100%;
+    grid-template-columns: repeat(8, 12vw);
+    grid-template-rows: repeat(8, 12vh);
     font-family: $header-pair;
     .contact-form {
       grid-row: 3 / 6;
@@ -234,14 +228,16 @@ header {
     text-align: center;
   }
   .contact-socials {
-    margin-top: 20px;
-  }
-  #socials-arrow {
+    margin-top: 2rem;
     grid-row: 7 / 8;
-    grid-column: 2 / 6;
-    height: 15vh;
-    width: 40vw;
-    margin-left: 20px;
+    grid-column: 3 / 7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: $bug-border;
+    .info-icons{
+      height: 2rem;
+    }    
   }
   .contact-intro {
     margin-bottom: 1rem;
@@ -340,7 +336,7 @@ header {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(8, 12.5vw);
-    grid-template-rows: repeat(8, 12.5vh);
+    grid-template-rows: repeat(8, calc(12.5vh - (env(safe-area-inset-bottom) / 8)));
     scroll-snap-align: center;
     .landing-intro {
       grid-row: 3 / 6;
@@ -607,7 +603,7 @@ header {
 }
 
 footer {
-  grid-row: 8 /9;
+  grid-row: 8 / 9;
   grid-column: 1 / -1;
   height: 100%;
   width: 44px;
@@ -792,6 +788,29 @@ footer {
             }
           }
         }
+      }
+    }
+  }
+  .contact{
+    .contact-container{
+      display: grid;
+      grid-template-columns: repeat(8, 12.5vw);
+      grid-template-rows: repeat(8, 12.5vh);
+      .contact-form{
+        grid-row: 3 / 6;
+        grid-column: 2 / 5;
+      }
+      .contact-intro {
+        grid-row: 2 / 3;
+        grid-column: 2 / 5;
+      }
+      .email-cue{
+        grid-row: 6 / 8;
+        grid-column: 2 / 5;
+      }
+      .contact-socials{
+        grid-column: 2 / 5;
+
       }
     }
   }
