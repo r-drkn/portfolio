@@ -41,6 +41,11 @@ body {
   width: 100%;
   background-color: #FDFFDE;
   overscroll-behavior: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 header {
@@ -1183,6 +1188,42 @@ footer .info-bar .info-icons :active {
   }
   .blog-container .blog-card-container .blog-card-title {
     font-size: 3rem;
+  }
+  .work .work-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (12.5vw)[8];
+        grid-template-columns: repeat(8, 12.5vw);
+    -ms-grid-rows: (12.5vh)[8];
+        grid-template-rows: repeat(8, 12.5vh);
+  }
+  .work .work-container .work-carousel {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 5;
+    grid-row: 2 / 7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 6;
+    grid-column: 2 / 8;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+  }
+  .work .work-container .work-carousel .work-items {
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    margin: 1rem;
+    overflow-y: hidden;
+  }
+  .work .work-container .work-carousel .work-items .work-header-container .work-headers {
+    font-family: "Syne Regular", sans-serif;
+    font-size: 36px;
+  }
+  .work .work-container .work-carousel .work-items .work-header-container .work-headers h3 {
+    font-size: 5vw;
   }
   .about-title {
     font-size: 52px;
