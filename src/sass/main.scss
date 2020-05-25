@@ -813,6 +813,7 @@ footer {
       .phone-contact {
         grid-row: 3 / 7;
         grid-column: 6 / 8;
+        display: block;
         img {
           height: 100%;
         }
@@ -822,7 +823,7 @@ footer {
         grid-column: 2 / 5;
       }
       .contact-form {
-        grid-row: 3 / 6;
+        grid-row: 4 / 6;
         grid-column: 2 / 5;
       }
 

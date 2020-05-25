@@ -1258,6 +1258,7 @@ footer .info-bar .info-icons :active {
     -ms-grid-column: 6;
     -ms-grid-column-span: 2;
     grid-column: 6 / 8;
+    display: block;
   }
   .contact .contact-container .phone-contact img {
     height: 100%;
@@ -1271,9 +1272,9 @@ footer .info-bar .info-icons :active {
     grid-column: 2 / 5;
   }
   .contact .contact-container .contact-form {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 3;
-    grid-row: 3 / 6;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4 / 6;
     -ms-grid-column: 2;
     -ms-grid-column-span: 3;
     grid-column: 2 / 5;
