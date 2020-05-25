@@ -495,8 +495,8 @@ header {
   display: grid;
   -ms-grid-columns: (12.5vw)[8];
       grid-template-columns: repeat(8, 12.5vw);
-  -ms-grid-rows: (12.5vh)[16];
-      grid-template-rows: repeat(16, 12.5vh);
+  -ms-grid-rows: (calc(12.5vh - (env(safe-area-inset-bottom) / 8)))[16];
+      grid-template-rows: repeat(16, calc(12.5vh - (env(safe-area-inset-bottom) / 8)));
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
