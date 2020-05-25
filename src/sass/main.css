@@ -1,24 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
 @import url("https://use.typekit.net/lgh5tcm.css");
-@import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
-@font-face {
-  font-family: "Hanken Book";
-  src: url("../hanken-book.ttf") format("truetype");
-}
-
 @font-face {
   font-family: "Syne Regular";
-  src: url("../syne-regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Snap It Mono";
-  src: url("../Snap-itmono-1.6-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Young Serif";
-  src: url("../YoungSerif-Regular.woff") format("woff");
+  src: url("../fonts/syne-regular.ttf") format("truetype");
 }
 
 * {
@@ -351,6 +334,10 @@ header {
   margin-bottom: 1rem;
 }
 
+.contact .phone-contact {
+  display: none;
+}
+
 .work .work-container {
   display: -ms-grid;
   display: grid;
@@ -392,10 +379,29 @@ header {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  overflow-y: auto;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   height: 100%;
   width: 100%;
+}
+
+.work .work-container .work-carousel .work-items .projects {
+  color: black;
+  font-family: franklin-gothic-urw-comp, sans-serif;
+  font-weight: 200;
+  font-size: 12vw;
+  font-style: normal;
+  border-top: 2px solid black;
+  margin-top: 1rem;
+}
+
+.work .work-container .work-carousel .work-items .projects h3 {
+  font-size: 2rem;
+}
+
+.work .work-container .work-carousel .work-items .projects p {
+  font-size: 1rem;
 }
 
 .work .work-container .work-carousel .work-items .work-header-container {
@@ -925,21 +931,6 @@ header {
   opacity: 0.4;
 }
 
-.work-icon {
-  height: 15vh;
-  fill: green;
-}
-
-.body-text {
-  width: 100%;
-  font-family: "Young Serif", serif;
-  font-family: franklin-gothic-urw-comp, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  padding: 10px;
-}
-
 footer {
   -ms-grid-row: 8;
   -ms-grid-row-span: 1;
@@ -981,7 +972,7 @@ footer .info-bar .info-icons :active {
   opacity: 0.4;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   #menu {
     display: none;
   }
@@ -1243,7 +1234,7 @@ footer .info-bar .info-icons :active {
     -ms-flex-negative: 1;
         flex-shrink: 1;
     margin: 1rem;
-    overflow-y: hidden;
+    overflow-y: auto;
   }
   .work .work-container .work-carousel .work-items .work-header-container .work-headers {
     font-family: "Syne Regular", sans-serif;

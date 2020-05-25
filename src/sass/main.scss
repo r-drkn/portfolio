@@ -1,22 +1,9 @@
 @import "variables";
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
-@import url("https://use.typekit.net/lgh5tcm.css");
-@import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
-@font-face {
-  font-family: "Hanken Book";
-  src: url("../hanken-book.ttf") format("truetype");
-}
+@import url("https://use.typekit.net/lgh5tcm.css"); // Franklin Gothic
+
 @font-face {
   font-family: "Syne Regular";
-  src: url("../syne-regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Snap It Mono";
-  src: url("../Snap-itmono-1.6-Regular.woff") format("woff");
-}
-@font-face {
-  font-family: "Young Serif";
-  src: url("../YoungSerif-Regular.woff") format("woff");
+  src: url("../fonts/syne-regular.ttf") format("truetype");
 }
 @mixin text-base {
   color: black;
@@ -234,12 +221,15 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    .info-icons{
+    .info-icons {
       height: 2rem;
-    }    
+    }
   }
   .contact-intro {
     margin-bottom: 1rem;
+  }
+  .phone-contact{
+    display: none;
   }
 }
 
@@ -263,9 +253,21 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
+        overflow-y: auto;
         flex-shrink: 0;
         height: 100%;
         width: 100%;
+        .projects {
+          @include text-second;
+          h3 {
+            font-size: 2rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+          border-top: 2px solid black;
+          margin-top: 1rem;
+        }
         .work-header-container {
           display: flex;
           align-items: center;
@@ -325,7 +327,10 @@ header {
 .landing-container {
   display: grid;
   grid-template-columns: repeat(8, 12.5vw);
-  grid-template-rows: repeat(16, calc(12.5vh - (env(safe-area-inset-bottom) / 8)));
+  grid-template-rows: repeat(
+    16,
+    calc(12.5vh - (env(safe-area-inset-bottom) / 8))
+  );
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -335,7 +340,10 @@ header {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(8, 12.5vw);
-    grid-template-rows: repeat(8, calc(12.5vh - (env(safe-area-inset-bottom) / 8)));
+    grid-template-rows: repeat(
+      8,
+      calc(12.5vh - (env(safe-area-inset-bottom) / 8))
+    );
     scroll-snap-align: center;
     .landing-intro {
       grid-row: 3 / 6;
@@ -428,8 +436,8 @@ header {
     grid-column: 1 / -1;
     display: grid;
     grid-template: repeat(10, 10vh) / repeat(8, 12.5vw);
-    .portrait{ 
-    display: none;
+    .portrait {
+      display: none;
     }
     .about-title {
       grid-row: 10 / 11;
@@ -590,20 +598,6 @@ header {
     }
   }
 }
-.work-icon {
-  height: 15vh;
-  fill: green;
-}
-
-.body-text {
-  width: 100%;
-  font-family: $header-text;
-  font-family: franklin-gothic-urw-comp, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  padding: 10px;
-}
 
 footer {
   grid-row: 8 / 9;
@@ -634,7 +628,7 @@ footer {
 
 // Screen Sizes 500px and Up
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   #menu {
     display: none;
   }
@@ -737,9 +731,6 @@ footer {
         grid-column: 2 / 5;
       }
     }
-
-    
-
   }
   .blog-container {
     display: grid;
@@ -800,7 +791,7 @@ footer {
         .work-items {
           flex-shrink: 1;
           margin: 1rem;
-          overflow-y: hidden;
+          overflow-y: auto;
           .work-header-container {
             .work-headers {
               font-family: $header-pair;
@@ -814,34 +805,33 @@ footer {
       }
     }
   }
-  .contact{
-    .contact-container{
+  .contact {
+    .contact-container {
       display: grid;
       grid-template-columns: repeat(8, 12.5vw);
       grid-template-rows: repeat(10, 10vh);
-      .phone-contact{
+      .phone-contact {
         grid-row: 3 / 7;
         grid-column: 6 / 8;
-        img{
-          height:100%;
+        img {
+          height: 100%;
         }
       }
       .contact-intro {
         grid-row: 2 / 3;
         grid-column: 2 / 5;
       }
-      .contact-form{
+      .contact-form {
         grid-row: 3 / 6;
         grid-column: 2 / 5;
       }
-      
-      .email-cue{
+
+      .email-cue {
         grid-row: 6 / 8;
         grid-column: 2 / 5;
       }
-      .contact-socials{
+      .contact-socials {
         grid-column: 2 / 5;
-
       }
     }
   }
@@ -849,8 +839,4 @@ footer {
     font-size: 52px;
     line-height: 52px;
   }
-}
-// Screen Sizes 700px and Up
-
-@media (min-width: 700px) {
 }
