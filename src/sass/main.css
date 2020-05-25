@@ -309,7 +309,7 @@ header {
 
 .contact .contact-intro .contact-header {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .contact .email-cue {
@@ -341,7 +341,6 @@ header {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  border: 2px solid red;
 }
 
 .contact .contact-socials .info-icons {
@@ -666,6 +665,25 @@ header {
       grid-template: repeat(10, 10vh)/repeat(8, 12.5vw);
 }
 
+.landing-container .about-container .portrait {
+  display: none;
+}
+
+.landing-container .about-container .about-title {
+  -ms-grid-row: 10;
+  -ms-grid-row-span: 1;
+  grid-row: 10 / 11;
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 1;
+  grid-column: 8 / 9;
+  right: -20px;
+  bottom: -10px;
+  line-height: 30px;
+  letter-spacing: -1px;
+  position: relative;
+  font-size: 54px;
+}
+
 .landing-container .about-container .about-table {
   grid-column: 2 / -2;
   -ms-grid-row: 2;
@@ -749,21 +767,6 @@ header {
   color: #7e806f;
   text-align: center;
   border-bottom: none;
-}
-
-.about-title {
-  -ms-grid-row: 10;
-  -ms-grid-row-span: 1;
-  grid-row: 10 / 11;
-  -ms-grid-column: 8;
-  -ms-grid-column-span: 1;
-  grid-column: 8 / 9;
-  right: -20px;
-  bottom: -10px;
-  line-height: 30px;
-  font-size: 36px;
-  letter-spacing: -1px;
-  position: relative;
 }
 
 .blog-title {
@@ -1093,28 +1096,52 @@ footer .info-bar .info-icons :active {
     grid-column: 1 / -1;
     display: -ms-grid;
     display: grid;
+    overflow-y: hidden;
     -ms-grid-rows: (10vh)[10];
     -ms-grid-columns: (12.5vw)[8];
         grid-template: repeat(10, 10vh)/repeat(8, 12.5vw);
   }
-  .landing-container .about-container .about-table {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 3;
-    grid-row: 3 / 6;
+  .landing-container .about-container .portrait {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 6;
+    grid-row: 2 / 8;
     -ms-grid-column: 6;
     -ms-grid-column-span: 2;
     grid-column: 6 / 8;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .landing-container a {
+  .landing-container .about-container .portrait .portrait-image {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-box-shadow: 1px 1px 10px #7E806F;
+            box-shadow: 1px 1px 10px #7E806F;
+  }
+  .landing-container .about-container .about-title {
+    right: -5.5vw;
+    bottom: 70px;
+    line-height: 30px;
+    letter-spacing: -1px;
+    position: relative;
+    font-size: 54px;
     text-decoration: none;
-    color: black;
-    font-family: "Syne Regular";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 32px;
-    letter-spacing: 0.05vw;
-    border-bottom: 2px solid black;
-    text-align: center;
+  }
+  .landing-container .about-container .about-table {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2 / 6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2 / 5;
   }
   .blog-container {
     display: -ms-grid;
@@ -1230,21 +1257,32 @@ footer .info-bar .info-icons :active {
     display: grid;
     -ms-grid-columns: (12.5vw)[8];
         grid-template-columns: repeat(8, 12.5vw);
-    -ms-grid-rows: (12.5vh)[8];
-        grid-template-rows: repeat(8, 12.5vh);
+    -ms-grid-rows: (10vh)[10];
+        grid-template-rows: repeat(10, 10vh);
   }
-  .contact .contact-container .contact-form {
+  .contact .contact-container .phone-contact {
     -ms-grid-row: 3;
-    -ms-grid-row-span: 3;
-    grid-row: 3 / 6;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-    grid-column: 2 / 5;
+    -ms-grid-row-span: 4;
+    grid-row: 3 / 7;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 2;
+    grid-column: 6 / 8;
+  }
+  .contact .contact-container .phone-contact img {
+    height: 100%;
   }
   .contact .contact-container .contact-intro {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2 / 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2 / 5;
+  }
+  .contact .contact-container .contact-form {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    grid-row: 3 / 6;
     -ms-grid-column: 2;
     -ms-grid-column-span: 3;
     grid-column: 2 / 5;

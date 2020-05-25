@@ -218,7 +218,7 @@ header {
     align-items: flex-end;
     .contact-header {
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
   .email-cue {
@@ -234,7 +234,6 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: $bug-border;
     .info-icons{
       height: 2rem;
     }    
@@ -429,6 +428,19 @@ header {
     grid-column: 1 / -1;
     display: grid;
     grid-template: repeat(10, 10vh) / repeat(8, 12.5vw);
+    .portrait{ 
+    display: none;
+    }
+    .about-title {
+      grid-row: 10 / 11;
+      grid-column: 8 / 9;
+      right: -20px;
+      bottom: -10px;
+      line-height: 30px;
+      letter-spacing: -1px;
+      position: relative;
+      font-size: 54px;
+    }
     .about-table {
       grid-column: 2 / -2;
       grid-row: 2 / 10;
@@ -480,16 +492,7 @@ header {
 }
 
 //Titles Positioning
-.about-title {
-  grid-row: 10 / 11;
-  grid-column: 8 / 9;
-  right: -20px;
-  bottom: -10px;
-  line-height: 30px;
-  font-size: 36px;
-  letter-spacing: -1px;
-  position: relative;
-}
+
 .blog-title {
   line-height: 36px;
   right: -33px;
@@ -704,19 +707,39 @@ footer {
       grid-row: 9 / -1;
       grid-column: 1 / -1;
       display: grid;
+      overflow-y: hidden;
       grid-template: repeat(10, 10vh) / repeat(8, 12.5vw);
-      .about-table {
-        grid-row: 3 / 6;
+      .portrait {
+        grid-row: 2 / 8;
         grid-column: 6 / 8;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .portrait-image {
+          width: 100%;
+          border-radius: 50%;
+          box-shadow: 1px 1px 10px $grey-color;
+        }
+      }
+      .about-title {
+        right: -5.5vw;
+        bottom: 70px;
+        line-height: 30px;
+        letter-spacing: -1px;
+        position: relative;
+        font-size: 54px;
+        text-decoration: none;
+      }
+      .about-table {
+        grid-row: 2 / 6;
+        grid-column: 2 / 5;
       }
     }
 
-    a {
-      text-decoration: none;
-      @include text-base;
-      border-bottom: 2px solid black;
-      text-align: center;
-    }
+    
+
   }
   .blog-container {
     display: grid;
@@ -795,15 +818,23 @@ footer {
     .contact-container{
       display: grid;
       grid-template-columns: repeat(8, 12.5vw);
-      grid-template-rows: repeat(8, 12.5vh);
-      .contact-form{
-        grid-row: 3 / 6;
-        grid-column: 2 / 5;
+      grid-template-rows: repeat(10, 10vh);
+      .phone-contact{
+        grid-row: 3 / 7;
+        grid-column: 6 / 8;
+        img{
+          height:100%;
+        }
       }
       .contact-intro {
         grid-row: 2 / 3;
         grid-column: 2 / 5;
       }
+      .contact-form{
+        grid-row: 3 / 6;
+        grid-column: 2 / 5;
+      }
+      
       .email-cue{
         grid-row: 6 / 8;
         grid-column: 2 / 5;
