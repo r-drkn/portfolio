@@ -1280,9 +1280,9 @@ footer .info-bar .info-icons :active {
     grid-column: 2 / 5;
   }
   .contact .contact-container .email-cue {
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 2;
-    grid-row: 6 / 8;
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    grid-row: 7 / 8;
     -ms-grid-column: 2;
     -ms-grid-column-span: 3;
     grid-column: 2 / 5;
@@ -1291,6 +1291,9 @@ footer .info-bar .info-icons :active {
     -ms-grid-column: 2;
     -ms-grid-column-span: 3;
     grid-column: 2 / 5;
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 1;
+    grid-row: 8 / 9;
   }
   .about-title {
     font-size: 52px;
